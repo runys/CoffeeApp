@@ -1,4 +1,5 @@
-# CoffeeApp
+# The Coffee App
+
 App used for the Notification Center workshop in the Apple Developer Academy at Naples.
 
 ## Features
