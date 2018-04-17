@@ -9,5 +9,13 @@
 import Foundation
 
 class Coffee {
+    let id: String
+    let name: String
+    let imageURL: String
     
+    init(id: String, name: String, imageURL: String) {
+        self.id = id
+        self.name = name
+        self.imageURL = imageURL
+    }
 }

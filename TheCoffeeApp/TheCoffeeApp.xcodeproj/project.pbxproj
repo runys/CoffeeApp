@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27BAC0182086518F00962876 /* NearbyCoffeeShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */; };
 		27DEDAE82084E643004E310C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDAE72084E643004E310C /* AppDelegate.swift */; };
 		27DEDAED2084E643004E310C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAEB2084E643004E310C /* Main.storyboard */; };
 		27DEDAEF2084E643004E310C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAEE2084E643004E310C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCoffeeShopTableViewCell.swift; sourceTree = "<group>"; };
 		27DEDAE42084E643004E310C /* TheCoffeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCoffeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DEDAE72084E643004E310C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DEDAEC2084E643004E310C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27BAC0162086515B00962876 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		27DEDADB2084E642004E310C = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		27DEDAE62084E643004E310C /* TheCoffeeApp */ = {
 			isa = PBXGroup;
 			children = (
+				27BAC0162086515B00962876 /* Custom Cells */,
 				27DEDAEB2084E643004E310C /* Main.storyboard */,
 				27DEDAFF2085F286004E310C /* TipsAndTricksTableViewController.swift */,
 				27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */,
@@ -205,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BAC0182086518F00962876 /* NearbyCoffeeShopTableViewCell.swift in Sources */,
 				27DEDB0D2085F720004E310C /* CoffeeShop.swift in Sources */,
 				27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */,
 				27DEDB1C2086315B004E310C /* DealDAO.swift in Sources */,

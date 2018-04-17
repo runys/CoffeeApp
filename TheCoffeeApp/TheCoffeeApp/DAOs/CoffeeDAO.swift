@@ -10,4 +10,27 @@ import Foundation
 
 class CoffeeDAO {
     
+    // Temporary database of coffees
+    private static var coffeeDatabase: [Coffee] = [
+        Coffee(id: "001", name: "Espresso", imageURL: "coffee_square_1"),
+        Coffee(id: "001", name: "Double Espresso", imageURL: "coffee_square_1"),
+        Coffee(id: "002", name: "Cappuccino", imageURL: "coffee_square_1"),
+        Coffee(id: "003", name: "Americano", imageURL: "coffee_square_1"),
+        Coffee(id: "004", name: "Latte", imageURL: "coffee_square_1"),
+        Coffee(id: "005", name: "Macchiato", imageURL: "coffee_square_1"),
+        Coffee(id: "006", name: "Mocha", imageURL: "coffee_square_1")
+    ]
+    
+    static func getAllCoffees() -> [Coffee] {
+        return coffeeDatabase
+    }
+    
+    static func getCoffee(_ id: String) -> Coffee? {
+        let coffee = coffeeDatabase.first { (coffee) -> Bool in
+            return coffee.id == id
+        }
+        
+        return coffee
+    }
+    
 }
