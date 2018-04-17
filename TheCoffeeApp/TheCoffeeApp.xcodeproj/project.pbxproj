@@ -17,6 +17,16 @@
 		27DEDB022085F294004E310C /* CoffeeDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */; };
 		27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB032085F2B7004E310C /* DrinkingHistoryTableViewController.swift */; };
 		27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */; };
+		27DEDB0B2085F718004E310C /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB0A2085F718004E310C /* Coffee.swift */; };
+		27DEDB0D2085F720004E310C /* CoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB0C2085F720004E310C /* CoffeeShop.swift */; };
+		27DEDB0F2085F727004E310C /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB0E2085F727004E310C /* Tip.swift */; };
+		27DEDB112085F73F004E310C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB102085F73F004E310C /* Deal.swift */; };
+		27DEDB132085F746004E310C /* DrinkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB122085F746004E310C /* DrinkRecord.swift */; };
+		27DEDB1620863137004E310C /* CoffeeShopDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1520863137004E310C /* CoffeeShopDAO.swift */; };
+		27DEDB182086313F004E310C /* CoffeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB172086313F004E310C /* CoffeeDAO.swift */; };
+		27DEDB1A20863152004E310C /* TipDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1920863152004E310C /* TipDAO.swift */; };
+		27DEDB1C2086315B004E310C /* DealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1B2086315B004E310C /* DealDAO.swift */; };
+		27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +42,16 @@
 		27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeDealsTableViewController.swift; path = Controllers/CoffeeDealsTableViewController.swift; sourceTree = "<group>"; };
 		27DEDB032085F2B7004E310C /* DrinkingHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinkingHistoryTableViewController.swift; path = Controllers/DrinkingHistoryTableViewController.swift; sourceTree = "<group>"; };
 		27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeRemindersTableViewController.swift; path = Controllers/CoffeeRemindersTableViewController.swift; sourceTree = "<group>"; };
+		27DEDB0A2085F718004E310C /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
+		27DEDB0C2085F720004E310C /* CoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShop.swift; sourceTree = "<group>"; };
+		27DEDB0E2085F727004E310C /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		27DEDB102085F73F004E310C /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		27DEDB122085F746004E310C /* DrinkRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecord.swift; sourceTree = "<group>"; };
+		27DEDB1520863137004E310C /* CoffeeShopDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDAO.swift; sourceTree = "<group>"; };
+		27DEDB172086313F004E310C /* CoffeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDAO.swift; sourceTree = "<group>"; };
+		27DEDB1920863152004E310C /* TipDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDAO.swift; sourceTree = "<group>"; };
+		27DEDB1B2086315B004E310C /* DealDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDAO.swift; sourceTree = "<group>"; };
+		27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkHistoryDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +91,8 @@
 				27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */,
 				27DEDAFD2085F276004E310C /* NearbyCoffeShopsTableViewController.swift */,
 				27DEDAFB2085F23D004E310C /* CoffeeShopDetailsViewController.swift */,
+				27DEDB142086311C004E310C /* DAOs */,
+				27DEDB092085F6F8004E310C /* Model */,
 				27DEDAEE2084E643004E310C /* Assets.xcassets */,
 				27DEDAFA2084E6F0004E310C /* Supporting Files */,
 			);
@@ -85,6 +107,30 @@
 				27DEDAF32084E643004E310C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27DEDB092085F6F8004E310C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27DEDB0A2085F718004E310C /* Coffee.swift */,
+				27DEDB0C2085F720004E310C /* CoffeeShop.swift */,
+				27DEDB0E2085F727004E310C /* Tip.swift */,
+				27DEDB102085F73F004E310C /* Deal.swift */,
+				27DEDB122085F746004E310C /* DrinkRecord.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27DEDB142086311C004E310C /* DAOs */ = {
+			isa = PBXGroup;
+			children = (
+				27DEDB1520863137004E310C /* CoffeeShopDAO.swift */,
+				27DEDB172086313F004E310C /* CoffeeDAO.swift */,
+				27DEDB1920863152004E310C /* TipDAO.swift */,
+				27DEDB1B2086315B004E310C /* DealDAO.swift */,
+				27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */,
+			);
+			path = DAOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,13 +205,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DEDB0D2085F720004E310C /* CoffeeShop.swift in Sources */,
 				27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */,
+				27DEDB1C2086315B004E310C /* DealDAO.swift in Sources */,
+				27DEDB112085F73F004E310C /* Deal.swift in Sources */,
+				27DEDB132085F746004E310C /* DrinkRecord.swift in Sources */,
+				27DEDB182086313F004E310C /* CoffeeDAO.swift in Sources */,
+				27DEDB1A20863152004E310C /* TipDAO.swift in Sources */,
 				27DEDAE82084E643004E310C /* AppDelegate.swift in Sources */,
+				27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */,
 				27DEDAFE2085F276004E310C /* NearbyCoffeShopsTableViewController.swift in Sources */,
 				27DEDB022085F294004E310C /* CoffeeDealsTableViewController.swift in Sources */,
 				27DEDAFC2085F23D004E310C /* CoffeeShopDetailsViewController.swift in Sources */,
 				27DEDB002085F286004E310C /* TipsAndTricksTableViewController.swift in Sources */,
+				27DEDB0F2085F727004E310C /* Tip.swift in Sources */,
+				27DEDB1620863137004E310C /* CoffeeShopDAO.swift in Sources */,
 				27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */,
+				27DEDB0B2085F718004E310C /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
