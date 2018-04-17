@@ -1,0 +1,30 @@
+{
+    "coffee": [
+        { "id": "", "name": "", "image-url": ""}
+    ],
+    "shops": [
+        {
+            "id": "",
+            "name": "",
+            "location": { "latitude": "", "longitude": ""},
+            "image-url": "",
+            "description": "",
+            "coffee": [
+                { "coffee-id": "", "rating": "", "price": 0 },
+                { "coffee-id": "", "rating": "", "price": 0 }
+            ]
+        }
+    ],
+    "tips": [
+        { "type": "image-tip", "subject": "", "headline": "", "text": "", "image-url": "" },
+        { "type": "text-tip", "subject": "", "headline": "", "text": "", "image-url": "" }
+    ],
+    "deals": [
+        { "shop-id": "", "coffee-id": "", "previous-price": 0, "new-price": 0 },
+        { "shop-id": "", "coffee-id": "", "previous-price": 0, "new-price": 0 }
+    ],
+    "history": [
+        { "type": "coffee", "timeframe": ""},
+        { "type": "coffee", "timeframe": ""}
+    ]
+}
