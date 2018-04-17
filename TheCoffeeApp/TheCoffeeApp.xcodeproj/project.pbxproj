@@ -11,6 +11,12 @@
 		27DEDAED2084E643004E310C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAEB2084E643004E310C /* Main.storyboard */; };
 		27DEDAEF2084E643004E310C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAEE2084E643004E310C /* Assets.xcassets */; };
 		27DEDAF22084E643004E310C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAF02084E643004E310C /* LaunchScreen.storyboard */; };
+		27DEDAFC2085F23D004E310C /* CoffeeShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDAFB2085F23D004E310C /* CoffeeShopDetailsViewController.swift */; };
+		27DEDAFE2085F276004E310C /* NearbyCoffeShopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDAFD2085F276004E310C /* NearbyCoffeShopsTableViewController.swift */; };
+		27DEDB002085F286004E310C /* TipsAndTricksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDAFF2085F286004E310C /* TipsAndTricksTableViewController.swift */; };
+		27DEDB022085F294004E310C /* CoffeeDealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */; };
+		27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB032085F2B7004E310C /* DrinkingHistoryTableViewController.swift */; };
+		27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,12 @@
 		27DEDAEE2084E643004E310C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27DEDAF12084E643004E310C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27DEDAF32084E643004E310C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27DEDAFB2085F23D004E310C /* CoffeeShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeShopDetailsViewController.swift; path = Controllers/CoffeeShopDetailsViewController.swift; sourceTree = "<group>"; };
+		27DEDAFD2085F276004E310C /* NearbyCoffeShopsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearbyCoffeShopsTableViewController.swift; path = Controllers/NearbyCoffeShopsTableViewController.swift; sourceTree = "<group>"; };
+		27DEDAFF2085F286004E310C /* TipsAndTricksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TipsAndTricksTableViewController.swift; path = Controllers/TipsAndTricksTableViewController.swift; sourceTree = "<group>"; };
+		27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeDealsTableViewController.swift; path = Controllers/CoffeeDealsTableViewController.swift; sourceTree = "<group>"; };
+		27DEDB032085F2B7004E310C /* DrinkingHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinkingHistoryTableViewController.swift; path = Controllers/DrinkingHistoryTableViewController.swift; sourceTree = "<group>"; };
+		27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeRemindersTableViewController.swift; path = Controllers/CoffeeRemindersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				27DEDAEB2084E643004E310C /* Main.storyboard */,
+				27DEDAFF2085F286004E310C /* TipsAndTricksTableViewController.swift */,
+				27DEDB012085F294004E310C /* CoffeeDealsTableViewController.swift */,
+				27DEDB032085F2B7004E310C /* DrinkingHistoryTableViewController.swift */,
+				27DEDB052085F2CD004E310C /* CoffeeRemindersTableViewController.swift */,
+				27DEDAFD2085F276004E310C /* NearbyCoffeShopsTableViewController.swift */,
+				27DEDAFB2085F23D004E310C /* CoffeeShopDetailsViewController.swift */,
 				27DEDAEE2084E643004E310C /* Assets.xcassets */,
 				27DEDAFA2084E6F0004E310C /* Supporting Files */,
 			);
@@ -141,7 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */,
 				27DEDAE82084E643004E310C /* AppDelegate.swift in Sources */,
+				27DEDAFE2085F276004E310C /* NearbyCoffeShopsTableViewController.swift in Sources */,
+				27DEDB022085F294004E310C /* CoffeeDealsTableViewController.swift in Sources */,
+				27DEDAFC2085F23D004E310C /* CoffeeShopDetailsViewController.swift in Sources */,
+				27DEDB002085F286004E310C /* TipsAndTricksTableViewController.swift in Sources */,
+				27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
