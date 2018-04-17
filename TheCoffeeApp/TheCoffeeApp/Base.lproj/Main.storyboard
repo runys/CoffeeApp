@@ -461,7 +461,7 @@
                     <navigationItem key="navigationItem" title="History" largeTitleDisplayMode="always" id="ycs-mw-Uy4">
                         <barButtonItem key="rightBarButtonItem" title="Reminders" id="4tr-Lz-ITg">
                             <connections>
-                                <segue destination="Oko-Pm-bCG" kind="show" id="cnw-2J-EQJ"/>
+                                <segue destination="KRZ-3C-Atc" kind="show" id="UZu-Um-vbL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -471,20 +471,33 @@
             <point key="canvasLocation" x="750" y="1093"/>
         </scene>
         <!--Coffee Reminders-->
-        <scene sceneID="BF0-0h-0lh">
+        <scene sceneID="dRf-H2-dAf">
             <objects>
-                <viewController id="Oko-Pm-bCG" customClass="CoffeeRemindersTableViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cpu-RJ-KPD">
+                <tableViewController id="KRZ-3C-Atc" customClass="CoffeeRemindersTableViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lyU-q6-nml">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Jxo-aD-vnR"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Coffee Reminders" largeTitleDisplayMode="always" id="5Xl-tc-vu9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7xk-1q-PyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkReminderIdentifier" id="6TB-ly-JCS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6TB-ly-JCS" id="RTC-8g-aXh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KRZ-3C-Atc" id="LBT-qc-iG1"/>
+                            <outlet property="delegate" destination="KRZ-3C-Atc" id="Q06-hm-3oF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Coffee Reminders" id="hqJ-9o-cq5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBq-Xn-0e0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="1093"/>
+            <point key="canvasLocation" x="1534" y="1093"/>
         </scene>
         <!--Tips and Tricks-->
         <scene sceneID="irO-PN-D9U">
