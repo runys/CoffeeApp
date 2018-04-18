@@ -23,7 +23,10 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Get the information from the DAO to populate the local array
+        tableView.estimatedRowHeight = 122
+        
+        // 1. Get the information from the DAO to populate the local array
+        self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
     }
 
     // MARK: - Table view data source
@@ -55,7 +58,20 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     // TODO: Explain
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coffeShopIdentifier", for: indexPath)
-        // TODO: Configure cells per section
+        
+        let coffeeShopForCell = self.coffeeShop(for: indexPath)
+        
+        if let coffeeShopCell = cell as? NearbyCoffeeShopTableViewCell,
+           let coffeeShop = coffeeShopForCell{
+            
+            coffeeShopCell.nameLabel.text = coffeeShop.name
+            coffeeShopCell.topCoffeLabel.text = "☆ \(coffeeShop.topThreeCoffees[0].name)"
+            coffeeShopCell.distanceLabel.text = "\(coffeeShop.distanceFromYou)"
+            
+            // TODO: Prepare to download the image
+            coffeeShopCell.coffeeShopImageView.image = UIImage(named: coffeeShop.imageURL)
+        }
+        
         return cell
     }
     
@@ -70,14 +86,41 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
             return nil
         }
     }
+    
+    // TODO: Explain
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 122
+    }
 
     // MARK: - Navigation
     
     // TODO: Explain
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Navigation to coffee shop details
-        // TODO: Add segue identifier
+        if segue.identifier == "coffeeShopDetailIdentifier" {
+            if let coffeeShopDetailVC = segue.destination as? CoffeeShopDetailsViewController {
+                if let selectedIndex = tableView.indexPathForSelectedRow {
+                    let sectionKey = (selectedIndex.section == 0) ? NEARBY : OTHERS
+                    let selectedCoffeShop = self.coffeeShops[sectionKey]![selectedIndex.row]
+                    
+                    coffeeShopDetailVC.coffeeShop = selectedCoffeShop
+                }
+            }
+        }
     }
 
-
+    //
+    func coffeeShop(for indexPath: IndexPath) -> CoffeeShop? {
+        let coffeeShop: CoffeeShop
+        let coffeeShops: [CoffeeShop]
+        
+        if indexPath.section == 0 {
+            coffeeShops = self.coffeeShops[NEARBY] ?? []
+        } else {
+            coffeeShops = self.coffeeShops[OTHERS] ?? []
+        }
+        
+        coffeeShop = coffeeShops[indexPath.row]
+        
+        return coffeeShop
+    }
 }

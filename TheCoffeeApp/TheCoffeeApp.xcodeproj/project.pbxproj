@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B561B820874C7E005BED9D /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B561B720874C7E005BED9D /* LocationServices.swift */; };
 		27BAC0182086518F00962876 /* NearbyCoffeeShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */; };
 		27DEDAE82084E643004E310C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDAE72084E643004E310C /* AppDelegate.swift */; };
 		27DEDAED2084E643004E310C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DEDAEB2084E643004E310C /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B561B720874C7E005BED9D /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCoffeeShopTableViewCell.swift; sourceTree = "<group>"; };
 		27DEDAE42084E643004E310C /* TheCoffeeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCoffeeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DEDAE72084E643004E310C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				27DEDB0E2085F727004E310C /* Tip.swift */,
 				27DEDB102085F73F004E310C /* Deal.swift */,
 				27DEDB122085F746004E310C /* DrinkRecord.swift */,
+				27B561B720874C7E005BED9D /* LocationServices.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				27DEDB0F2085F727004E310C /* Tip.swift in Sources */,
 				27DEDB1620863137004E310C /* CoffeeShopDAO.swift in Sources */,
 				27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */,
+				27B561B820874C7E005BED9D /* LocationServices.swift in Sources */,
 				27DEDB0B2085F718004E310C /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

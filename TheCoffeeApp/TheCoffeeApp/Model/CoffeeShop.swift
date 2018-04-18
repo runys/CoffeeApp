@@ -13,13 +13,15 @@ struct Location {
     var longitude: Double
 }
 
+typealias CoffeeListEntry = (coffee: Coffee, rating: Int, price: Float)
+
 class CoffeeShop {
     let id: String
     let name: String
     let location: Location
     let imageURL : String
     let description: String
-    let coffees: [(name: String, rating: Int, price: Float)]
+    let coffees: [CoffeeListEntry]
     
     init(id: String, name: String, location: Location, imageURL: String, description: String) {
         self.id = id
@@ -31,9 +33,29 @@ class CoffeeShop {
         self.coffees = []
     }
     
-    var topThreeCoffees: [(name: String, rating: Int, price: Float)] {
-        // TODO: Calculate top coffees and return the top three in order
-        return []
+    init(id: String, name: String, location: Location, imageURL: String, description: String, coffees: [CoffeeListEntry]) {
+        self.id = id
+        self.name = name
+        self.location = location
+        self.imageURL = imageURL
+        self.description = description
+        
+        self.coffees = coffees
+    }
+    
+    var topThreeCoffees: [Coffee] {
+        
+        let sortedCoffees = self.coffees.sorted { $0.rating > $1.rating }
+        
+        var topThreeCoffees = [Coffee]()
+        
+        for coffeeEntry in sortedCoffees {
+            if topThreeCoffees.count < 3 {
+                topThreeCoffees.append(coffeeEntry.coffee)
+            }
+        }
+        
+        return topThreeCoffees
     }
     
     var distanceFromYou: Int {
