@@ -37,12 +37,12 @@ class DrinkingHistoryTableViewController: UITableViewController {
         let coffeeName = drinkRecord.coffee.name
         let placeName = drinkRecord.place.name
         
-        let when = "on \(drinkRecord.date), at \(drinkRecord.time)"
+        let when = "\(drinkRecord.date) \(drinkRecord.time)"
         
         // Coffe name
-        cell.textLabel?.text = coffeeName
+        cell.textLabel?.text = "\(when)"
         // Time and place
-        cell.detailTextLabel?.text = "\(when) at \(placeName)"
+        cell.detailTextLabel?.text = "\(coffeeName) at \(placeName)"
         
         return cell
     }
