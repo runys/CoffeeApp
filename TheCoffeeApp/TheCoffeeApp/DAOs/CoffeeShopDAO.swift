@@ -30,6 +30,24 @@ class CoffeeShopDAO {
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("003")!, rating: 2, price: 1.5),
                     (coffee: CoffeeDAO.getCoffee("004")!, rating: 1, price: 0.9)
+            ]),
+        CoffeeShop(id: "003",
+                   name: "Random Bar",
+                   location: Location(latitude: 0, longitude: 0),
+                   imageURL: "coffee_shop_placeholder",
+                   description: "That's a random coffe bar added for testing purposes. Enjoy the randomness.",
+                   coffees: [
+                    (coffee: CoffeeDAO.getCoffee("005")!, rating: 2, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("006")!, rating: 1, price: 1.9)
+            ]),
+        CoffeeShop(id: "004",
+                   name: "Another Bar",
+                   location: Location(latitude: 0, longitude: 0),
+                   imageURL: "coffee_shop_placeholder",
+                   description: "That's a placeholder coffe bar added for testing purposes, again. Soon to be replaced with real information, hopefully.",
+                   coffees: [
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("008")!, rating: 1, price: 1.9)
             ])
     ]
     
@@ -41,10 +59,12 @@ class CoffeeShopDAO {
     static func getAll(splitedByMinimum distance: Double) -> [String: [CoffeeShop]] {
         return [
             "NEARBY" : [
-                coffeeShops[0]
+                coffeeShops[0],
+                coffeeShops[3]
             ],
             "OTHERS" : [
-                coffeeShops[1]
+                coffeeShops[1],
+                coffeeShops[2]
             ]
         ]
     }
