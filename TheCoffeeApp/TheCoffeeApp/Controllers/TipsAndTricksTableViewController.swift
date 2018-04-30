@@ -56,7 +56,7 @@ class TipsAndTricksTableViewController: UITableViewController {
             imageTipCell.headlineLabel.text = tip.headline
             
             if let imageName = tip.imageURL {
-                imageTipCell.imageView?.image = UIImage(named: imageName)
+                imageTipCell.tipImageView.image = UIImage(named: imageName)
             }
         }
         
@@ -71,7 +71,7 @@ class TipsAndTricksTableViewController: UITableViewController {
         case .image:
             return 228.0
         case .text:
-            return 128.0
+            return 160.0
         }
     }
     
