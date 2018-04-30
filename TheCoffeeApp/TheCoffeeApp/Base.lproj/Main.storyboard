@@ -36,7 +36,7 @@
         <scene sceneID="162-9W-auE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Eq-8h-qjF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Nearby" id="hiU-Vh-5Va"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="icons8-near-me-filled" id="hiU-Vh-5Va"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zCb-qa-ZGM">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -255,7 +255,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VPW-q4-1RA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="textTipIdentifier" rowHeight="128" id="9U4-TI-Njb" customClass="TextTipTableViewCell" customModule="TheCoffeeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="128"/>
@@ -300,6 +300,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Kja-Qh-iEy" secondAttribute="bottom" constant="8" id="2Do-lW-bLL"/>
                                         <constraint firstItem="Kja-Qh-iEy" firstAttribute="leading" secondItem="aLN-Xe-hhd" secondAttribute="leading" constant="16" id="3cF-Gg-Pal"/>
@@ -323,7 +324,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEU-0B-dLT" customClass="CardView" customModule="TheCoffeeApp" customModuleProvider="target">
                                             <rect key="frame" x="16" y="8" width="343" height="212"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bwt-7G-RIY">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moka" translatesAutoresizingMaskIntoConstraints="NO" id="Bwt-7G-RIY">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="DHJ-Oe-3EJ"/>
@@ -358,6 +359,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="eEU-0B-dLT" firstAttribute="leading" secondItem="cXn-xP-jRx" secondAttribute="leading" constant="16" id="VJ9-5C-Zec"/>
                                         <constraint firstAttribute="bottom" secondItem="eEU-0B-dLT" secondAttribute="bottom" constant="8" id="fh6-7Q-PJh"/>
@@ -554,7 +556,7 @@
         <scene sceneID="irO-PN-D9U">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SVj-bW-rEk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tips and Tricks" id="Dw6-34-PWn"/>
+                    <tabBarItem key="tabBarItem" title="Tips and Tricks" image="icons8-knowledge-sharing-filled" id="Dw6-34-PWn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nen-1k-jNW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -573,7 +575,7 @@
         <scene sceneID="L63-g5-huX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MYs-hL-9jb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Deals" id="ghh-vj-t92"/>
+                    <tabBarItem key="tabBarItem" title="Deals" image="icons8-money" id="ghh-vj-t92"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lda-oj-M7z">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -592,7 +594,7 @@
         <scene sceneID="Wj1-Nr-MJS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fjE-Bq-qlT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="VLP-bh-b2G"/>
+                    <tabBarItem key="tabBarItem" title="History" image="icons8-activity-history" id="VLP-bh-b2G"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Foj-bb-T6A">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -610,5 +612,10 @@
     </scenes>
     <resources>
         <image name="coffee_shop_placeholder" width="2016" height="1512"/>
+        <image name="icons8-activity-history" width="25" height="25"/>
+        <image name="icons8-knowledge-sharing-filled" width="25" height="25"/>
+        <image name="icons8-money" width="25" height="25"/>
+        <image name="icons8-near-me-filled" width="25" height="25"/>
+        <image name="moka" width="470" height="225"/>
     </resources>
 </document>
