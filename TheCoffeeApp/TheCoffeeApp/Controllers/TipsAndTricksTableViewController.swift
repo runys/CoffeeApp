@@ -19,8 +19,6 @@ class TipsAndTricksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tips = TipDAO.getAllTips()
-        
-        self.tableView.estimatedRowHeight = 128
     }
 
 
@@ -61,18 +59,6 @@ class TipsAndTricksTableViewController: UITableViewController {
         }
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let tipType = self.tips[indexPath.row].type
-        
-        switch tipType {
-        case .image:
-            return 228.0
-        case .text:
-            return 160.0
-        }
     }
     
 }
