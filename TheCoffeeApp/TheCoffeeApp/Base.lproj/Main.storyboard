@@ -291,7 +291,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="WXA-9u-qcK" firstAttribute="leading" secondItem="Kja-Qh-iEy" secondAttribute="leading" constant="8" id="4IN-jQ-33e"/>
                                                 <constraint firstAttribute="trailing" secondItem="WXA-9u-qcK" secondAttribute="trailing" constant="8" id="A1L-bq-1Zp"/>
@@ -348,7 +348,7 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="9SD-5L-xZi" firstAttribute="top" secondItem="Bwt-7G-RIY" secondAttribute="bottom" constant="8" id="27G-8B-qD1"/>
                                                 <constraint firstItem="9SD-5L-xZi" firstAttribute="leading" secondItem="eEU-0B-dLT" secondAttribute="leading" constant="8" id="7YK-o7-SJk"/>
@@ -394,20 +394,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dealCellIdentifier" rowHeight="166" id="RN6-mc-DLB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="coffeeDealIdentifier" rowHeight="166" id="RN6-mc-DLB" customClass="CoffeeDealTableViewCell" customModule="TheCoffeeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="166"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RN6-mc-DLB" id="6V5-XQ-PiR">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17Y-FZ-nmL">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17Y-FZ-nmL">
                                             <rect key="frame" x="16" y="19" width="343" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="Vxx-nq-DUH"/>
                                             </constraints>
                                         </imageView>
-                                        <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-lT-Tb2">
+                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bni-lT-Tb2">
                                             <rect key="frame" x="16" y="19" width="343" height="128"/>
                                             <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
@@ -417,16 +417,16 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5w0-fH-t7M">
                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="31.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0u-6b-7G8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="295" height="31.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0u-6b-7G8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="292.5" height="31.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="5€" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-2F-sJi">
-                                                            <rect key="frame" x="295" y="0.0" width="32" height="31.5"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="10€" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNl-2F-sJi">
+                                                            <rect key="frame" x="292.5" y="0.0" width="34.5" height="31.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -434,13 +434,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03f-VN-cYf">
                                                     <rect key="frame" x="0.0" y="31.5" width="327" height="31.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNY-Jm-woP">
                                                     <rect key="frame" x="0.0" y="63" width="327" height="31.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -459,6 +459,14 @@
                                         <constraint firstItem="uL5-TR-Qoq" firstAttribute="leading" secondItem="17Y-FZ-nmL" secondAttribute="leading" constant="8" id="ytJ-FD-hA8"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="blackoutView" destination="Bni-lT-Tb2" id="mqf-4f-7mR"/>
+                                    <outlet property="coffeeImageView" destination="17Y-FZ-nmL" id="ron-j8-bPj"/>
+                                    <outlet property="coffeeNameLabel" destination="03f-VN-cYf" id="laq-RV-D9e"/>
+                                    <outlet property="newPriceLabel" destination="p0u-6b-7G8" id="4GP-Xs-9Wy"/>
+                                    <outlet property="oldPriceLabel" destination="FNl-2F-sJi" id="9vb-J4-q6A"/>
+                                    <outlet property="storeNameLabel" destination="pNY-Jm-woP" id="lnk-1L-Inb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

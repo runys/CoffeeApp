@@ -9,5 +9,15 @@
 import Foundation
 
 class Deal {
+    let store: CoffeeShop
+    let coffee: Coffee
+    let previousPrice: Float
+    let discountedPrice: Float
     
+    init(store: CoffeeShop, coffee: Coffee, previousPrice: Float, newPrice: Float) {
+        self.store = store
+        self.coffee = coffee
+        self.previousPrice = previousPrice
+        self.discountedPrice = newPrice
+    }
 }
