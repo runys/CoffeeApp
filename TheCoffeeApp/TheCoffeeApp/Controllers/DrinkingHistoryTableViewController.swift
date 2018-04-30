@@ -17,6 +17,8 @@ class DrinkingHistoryTableViewController: UITableViewController {
         
         self.history = DrinkHistoryDAO.getHistory()
         self.history.sort { $0.timestamp > $1.timestamp }
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source

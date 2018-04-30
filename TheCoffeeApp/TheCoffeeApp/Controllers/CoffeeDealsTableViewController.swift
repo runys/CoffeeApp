@@ -18,6 +18,8 @@ class CoffeeDealsTableViewController: UITableViewController {
         self.coffeeDeals = DealDAO.getAllDeals()
         
         self.tableView.estimatedRowHeight = 166
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source

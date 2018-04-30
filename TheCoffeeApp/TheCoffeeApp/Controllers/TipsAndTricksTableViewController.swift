@@ -19,6 +19,8 @@ class TipsAndTricksTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tips = TipDAO.getAllTips()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
 

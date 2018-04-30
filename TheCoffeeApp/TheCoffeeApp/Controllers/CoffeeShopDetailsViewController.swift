@@ -42,6 +42,10 @@ class CoffeeShopDetailsViewController: UIViewController {
         } else {
             self.title = "Coffee Shop"
         }
+        
+        self.setUpMap()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setUpMap() {

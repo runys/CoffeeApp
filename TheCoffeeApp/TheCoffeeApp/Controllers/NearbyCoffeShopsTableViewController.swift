@@ -23,10 +23,10 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 122
-        
         // 1. Get the information from the DAO to populate the local array
         self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
@@ -66,7 +66,7 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
             
             coffeeShopCell.nameLabel.text = coffeeShop.name
             coffeeShopCell.topCoffeLabel.text = "☆ \(coffeeShop.topThreeCoffees[0].name)"
-            coffeeShopCell.distanceLabel.text = "\(coffeeShop.distanceFromYou)"
+            coffeeShopCell.distanceLabel.text = "\(coffeeShop.distanceFromYou)m from you"
             
             // TODO: Prepare to download the image
             coffeeShopCell.coffeeShopImageView.image = UIImage(named: coffeeShop.imageURL)
@@ -85,11 +85,6 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         default:
             return nil
         }
-    }
-    
-    // TODO: Explain
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 122
     }
 
     // MARK: - Navigation
