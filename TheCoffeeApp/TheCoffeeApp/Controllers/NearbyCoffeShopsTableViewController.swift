@@ -78,8 +78,6 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     // TODO: Explain
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0:
-            return "Nearby coffee shops"
         case 1:
             return "Other coffee shops"
         default:
@@ -92,15 +90,19 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     // TODO: Explain
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "coffeeShopDetailIdentifier" {
-            if let coffeeShopDetailVC = segue.destination as? CoffeeShopDetailsViewController {
+            if let coffeeBarDetailVC = segue.destination as? CoffeBarDetailTableViewController {
                 if let selectedIndex = tableView.indexPathForSelectedRow {
                     let sectionKey = (selectedIndex.section == 0) ? NEARBY : OTHERS
-                    let selectedCoffeShop = self.coffeeShops[sectionKey]![selectedIndex.row]
+                    let selectedCoffeBar = self.coffeeShops[sectionKey]![selectedIndex.row]
                     
-                    coffeeShopDetailVC.coffeeShop = selectedCoffeShop
+                    coffeeBarDetailVC.coffeeBar = selectedCoffeBar
                 }
             }
         }
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        print("You are back")
     }
 
     //

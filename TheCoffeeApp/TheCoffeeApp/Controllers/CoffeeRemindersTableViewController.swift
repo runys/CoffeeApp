@@ -49,5 +49,9 @@ class CoffeeRemindersTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
+    
+    @IBAction func unwind(withSegue: UIStoryboardSegue) {
+        print("Reminders creation canceled.")
+    }
 
 }
