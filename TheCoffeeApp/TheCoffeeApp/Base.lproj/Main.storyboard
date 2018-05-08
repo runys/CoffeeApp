@@ -587,42 +587,72 @@
         <scene sceneID="bGf-Vh-PvW">
             <objects>
                 <tableViewController id="xKK-w7-Lpz" customClass="DrinkingHistoryTableViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Nb-we-oVA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Nb-we-oVA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkHistoryIdentifier" textLabel="55J-c6-wf2" detailTextLabel="RAS-a7-3PU" style="IBUITableViewCellStyleValue2" id="76t-kp-xeb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="76t-kp-xeb" id="KKC-Qj-FJf">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mon 13th  Apr 00:00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="55J-c6-wf2">
-                                            <rect key="frame" x="16" y="6" width="91" height="31.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Double espresso at Cafeteria" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAS-a7-3PU">
-                                            <rect key="frame" x="113" y="6" width="175.5" height="16"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="vA8-Dz-Wf6">
-                                <rect key="frame" x="0.0" y="72" width="375" height="108"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="drinkHistoryIdentifier" rowHeight="108" id="vA8-Dz-Wf6" customClass="DrinkHistoryTableViewCell" customModule="TheCoffeeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vA8-Dz-Wf6" id="TUb-hP-xh7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkI-ev-RSL">
+                                            <rect key="frame" x="16" y="11" width="343" height="86"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="gsN-kR-9rf">
+                                                    <rect key="frame" x="8" y="4" width="327" height="74"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1cm-M0-w4q">
+                                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc2-Pn-he7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="43.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location name" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHb-bN-9wH">
+                                                                    <rect key="frame" x="163.5" y="0.0" width="163.5" height="43.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/07 at 22:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNR-NS-2x9">
+                                                            <rect key="frame" x="0.0" y="43.5" width="327" height="30.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.90196078430000004" green="0.78039215689999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="gsN-kR-9rf" firstAttribute="leading" secondItem="KkI-ev-RSL" secondAttribute="leading" constant="8" id="DHd-SC-ylC"/>
+                                                <constraint firstAttribute="bottom" secondItem="gsN-kR-9rf" secondAttribute="bottom" constant="8" id="JVa-fb-dMr"/>
+                                                <constraint firstAttribute="trailing" secondItem="gsN-kR-9rf" secondAttribute="trailing" constant="8" id="koP-pZ-CGn"/>
+                                                <constraint firstItem="gsN-kR-9rf" firstAttribute="top" secondItem="KkI-ev-RSL" secondAttribute="top" constant="4" id="yby-Sl-Ovy"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KkI-ev-RSL" firstAttribute="top" secondItem="TUb-hP-xh7" secondAttribute="topMargin" id="Gz1-6G-w3X"/>
+                                        <constraint firstItem="KkI-ev-RSL" firstAttribute="bottom" secondItem="TUb-hP-xh7" secondAttribute="bottomMargin" id="O5G-Zt-7ye"/>
+                                        <constraint firstItem="KkI-ev-RSL" firstAttribute="leading" secondItem="TUb-hP-xh7" secondAttribute="leadingMargin" id="sUD-Ez-Rx9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KkI-ev-RSL" secondAttribute="trailing" id="zAn-on-zoM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundColorView" destination="KkI-ev-RSL" id="HeZ-g5-dH7"/>
+                                    <outlet property="coffeeNameLabel" destination="Uc2-Pn-he7" id="fuI-zq-cHo"/>
+                                    <outlet property="dateAndTimeLabel" destination="PNR-NS-2x9" id="NzG-7J-GAJ"/>
+                                    <outlet property="locationNameLabel" destination="SHb-bN-9wH" id="3Ej-m0-BNu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

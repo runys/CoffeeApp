@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27739F5A20A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27739F5920A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift */; };
 		277545172099E3EB006BB45F /* CoffeBarDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277545162099E3EB006BB45F /* CoffeBarDetailTableViewController.swift */; };
 		277E2F1720970B010069AF7D /* CoffeeDealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E2F1620970B010069AF7D /* CoffeeDealTableViewCell.swift */; };
 		27B561B820874C7E005BED9D /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B561B720874C7E005BED9D /* LocationServices.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27739F5920A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		277545162099E3EB006BB45F /* CoffeBarDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeBarDetailTableViewController.swift; path = Controllers/CoffeBarDetailTableViewController.swift; sourceTree = "<group>"; };
 		277E2F1620970B010069AF7D /* CoffeeDealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDealTableViewCell.swift; sourceTree = "<group>"; };
 		27B561B720874C7E005BED9D /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		27BAC0162086515B00962876 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				27739F5920A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift */,
 				277E2F1620970B010069AF7D /* CoffeeDealTableViewCell.swift */,
 				27D4FAC4208E1DDA0077FAF6 /* TextTipTableViewCell.swift */,
 				27D4FAC6208E1E190077FAF6 /* ImageTipTableViewCell.swift */,
@@ -254,6 +257,7 @@
 				27B561B820874C7E005BED9D /* LocationServices.swift in Sources */,
 				27D4FAC9208E37190077FAF6 /* CardView.swift in Sources */,
 				27DEDB0B2085F718004E310C /* Coffee.swift in Sources */,
+				27739F5A20A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
