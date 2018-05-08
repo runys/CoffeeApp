@@ -12,6 +12,7 @@
 		277E2F1720970B010069AF7D /* CoffeeDealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E2F1620970B010069AF7D /* CoffeeDealTableViewCell.swift */; };
 		27B561B820874C7E005BED9D /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B561B720874C7E005BED9D /* LocationServices.swift */; };
 		27BAC0182086518F00962876 /* NearbyCoffeeShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */; };
+		27D07D2120A1B5FA00C23336 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D07D2020A1B5FA00C23336 /* ColorPalette.swift */; };
 		27D4FAC5208E1DDA0077FAF6 /* TextTipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D4FAC4208E1DDA0077FAF6 /* TextTipTableViewCell.swift */; };
 		27D4FAC7208E1E190077FAF6 /* ImageTipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D4FAC6208E1E190077FAF6 /* ImageTipTableViewCell.swift */; };
 		27D4FAC9208E37190077FAF6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D4FAC8208E37190077FAF6 /* CardView.swift */; };
@@ -42,6 +43,7 @@
 		277E2F1620970B010069AF7D /* CoffeeDealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDealTableViewCell.swift; sourceTree = "<group>"; };
 		27B561B720874C7E005BED9D /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		27BAC0172086518F00962876 /* NearbyCoffeeShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCoffeeShopTableViewCell.swift; sourceTree = "<group>"; };
+		27D07D2020A1B5FA00C23336 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		27D4FAC4208E1DDA0077FAF6 /* TextTipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTipTableViewCell.swift; sourceTree = "<group>"; };
 		27D4FAC6208E1E190077FAF6 /* ImageTipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTipTableViewCell.swift; sourceTree = "<group>"; };
 		27D4FAC8208E37190077FAF6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				27D4FAC8208E37190077FAF6 /* CardView.swift */,
+				27D07D2020A1B5FA00C23336 /* ColorPalette.swift */,
 				27BAC0162086515B00962876 /* Custom Cells */,
 				27DEDAEB2084E643004E310C /* Main.storyboard */,
 				27DEDAFF2085F286004E310C /* TipsAndTricksTableViewController.swift */,
@@ -244,6 +247,7 @@
 				277E2F1720970B010069AF7D /* CoffeeDealTableViewCell.swift in Sources */,
 				27DEDB182086313F004E310C /* CoffeeDAO.swift in Sources */,
 				27DEDB1A20863152004E310C /* TipDAO.swift in Sources */,
+				27D07D2120A1B5FA00C23336 /* ColorPalette.swift in Sources */,
 				27DEDAE82084E643004E310C /* AppDelegate.swift in Sources */,
 				27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */,
 				27D4FAC5208E1DDA0077FAF6 /* TextTipTableViewCell.swift in Sources */,
