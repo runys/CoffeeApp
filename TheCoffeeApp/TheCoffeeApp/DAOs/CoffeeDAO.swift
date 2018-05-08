@@ -13,14 +13,15 @@ class CoffeeDAO {
     // Temporary database of coffees
     // Examples from: http://www.latteartguide.com/2016/01/different-types-of-coffee.html
     private static var coffeeDatabase: [Coffee] = [
-        Coffee(id: "001", name: "Espresso", imageURL: "coffee_square_1"),
-        Coffee(id: "002", name: "Double Espresso", imageURL: "coffee_square_1"),
-        Coffee(id: "003", name: "Ristretto", imageURL: "coffee_square_1"),
-        Coffee(id: "004", name: "Cappuccino", imageURL: "coffee_square_1"),
-        Coffee(id: "005", name: "Americano", imageURL: "coffee_square_1"),
-        Coffee(id: "006", name: "Latte", imageURL: "coffee_square_1"),
-        Coffee(id: "007", name: "Macchiato", imageURL: "coffee_square_1"),
-        Coffee(id: "008", name: "Mocha", imageURL: "coffee_square_1")
+        Coffee(id: "001", name: "Espresso", imageURL: "coffee-espresso"),
+        Coffee(id: "002", name: "Double Espresso", imageURL: "coffee-espresso-doppio"),
+        Coffee(id: "003", name: "Ristretto", imageURL: "coffee-ristretto"),
+        Coffee(id: "004", name: "Cappuccino", imageURL: "coffee-cappuccino"),
+        Coffee(id: "005", name: "Americano", imageURL: "coffee-americano"),
+        Coffee(id: "006", name: "Latte", imageURL: "coffee-latte"),
+        Coffee(id: "007", name: "Macchiato", imageURL: "coffee-macchiato"),
+        Coffee(id: "008", name: "Mocha", imageURL: "coffee-mocha"),
+        Coffee(id: "009", name: "Caffe Nocciola", imageURL: "coffee-nocciola")
     ]
     
     static func getAllCoffees() -> [Coffee] {
