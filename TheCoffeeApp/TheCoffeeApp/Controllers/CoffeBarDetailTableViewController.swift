@@ -27,6 +27,8 @@ class CoffeBarDetailTableViewController: UITableViewController {
     @IBOutlet weak var thirdCoffeeImageView: UIImageView!
     @IBOutlet weak var forthCoffeeImageView: UIImageView!
     
+    @IBOutlet weak var closeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,10 @@ class CoffeBarDetailTableViewController: UITableViewController {
     }
 
     func setUpInterface() {
+        
+        self.closeButton.layer.cornerRadius = cornerRadius
+        self.closeButton.clipsToBounds = true
+        
         self.locationMapView.layer.cornerRadius = cornerRadius
         self.locationMapView.clipsToBounds = true
         

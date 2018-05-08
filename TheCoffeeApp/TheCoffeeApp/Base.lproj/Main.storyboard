@@ -242,6 +242,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="closeButton" destination="aXb-EE-EOa" id="erm-xd-gE7"/>
                         <outlet property="descriptionLabel" destination="3a4-8t-Dcq" id="7q2-xJ-MiD"/>
                         <outlet property="firstCoffeeImageView" destination="LdR-xK-TWY" id="Sge-Hg-PG8"/>
                         <outlet property="forthCoffeeImageView" destination="oAf-RS-F1P" id="xrb-83-yQE"/>
@@ -255,7 +256,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AT7-xm-cZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="VG1-nS-fvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-812" y="2046.4767616191905"/>
+            <point key="canvasLocation" x="-1622" y="2024"/>
         </scene>
         <!--Nearby-->
         <scene sceneID="mwE-MI-6SS">
@@ -615,6 +616,14 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="vA8-Dz-Wf6">
+                                <rect key="frame" x="0.0" y="72" width="375" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vA8-Dz-Wf6" id="TUb-hP-xh7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xKK-w7-Lpz" id="Tme-aC-HNp"/>
@@ -631,7 +640,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3x-hk-FzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1093"/>
+            <point key="canvasLocation" x="749.60000000000002" y="1092.5037481259371"/>
         </scene>
         <!--Coffee Reminders-->
         <scene sceneID="dRf-H2-dAf">
