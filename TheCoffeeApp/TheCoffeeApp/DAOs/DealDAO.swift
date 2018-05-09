@@ -64,6 +64,7 @@ class DealDAO {
                             previousPrice: coffeShops[storeId].coffees[0].price,
                             newPrice: coffeShops[storeId].coffees[0].price * 0.8)
             addDeal(deal: deal)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "refreshDeals"), object: self)
             return deal
            
         }

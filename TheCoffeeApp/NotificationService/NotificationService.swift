@@ -6,6 +6,9 @@
 //  Copyright © 2018 Domenico Tangredi. All rights reserved.
 //
 
+// from https://medium.com/flawless-app-stories/ios-remote-push-notifications-in-a-nutshell-d05f5ccac252
+// to  be adapted
+
 import UserNotifications
 
 class NotificationService: UNNotificationServiceExtension {
@@ -15,7 +18,7 @@ class NotificationService: UNNotificationServiceExtension {
     
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
-        bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        bestAttemptContent  = (request.content.mutableCopy() as? UNMutableNotificationContent)
         
         guard let bestAttemptContent = bestAttemptContent, // 1. Make sure bestAttemptContent is not nil
             let apsData = bestAttemptContent.userInfo["aps"] as? [String: Any], // 2. Dig in the payload to get the
@@ -25,7 +28,7 @@ class NotificationService: UNNotificationServiceExtension {
             return
         }
         
-        bestAttemptContent.title    = "Service Extention title"
+        bestAttemptContent.title    = "Service Extention title" // Should create getShopByID
         bestAttemptContent.subtitle = "Service Extention subtitle"
         bestAttemptContent.body     = "Service Extention body"
         

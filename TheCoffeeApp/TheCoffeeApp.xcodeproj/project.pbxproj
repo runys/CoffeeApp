@@ -37,7 +37,6 @@
 		27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */; };
 		7D41D61220A3210400FED6F0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41D61120A3210400FED6F0 /* NotificationService.swift */; };
 		7D41D61620A3210400FED6F0 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D41D60F20A3210400FED6F0 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7D41D61C20A334D800FED6F0 /* IMG_0134.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		7D41D60F20A3210400FED6F0 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D41D61120A3210400FED6F0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7D41D61320A3210400FED6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0134.jpg; sourceTree = "<group>"; };
 		7D46C041209C7183001959EA /* TheCoffeeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheCoffeeApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +133,6 @@
 		27DEDADB2084E642004E310C = {
 			isa = PBXGroup;
 			children = (
-				7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */,
 				27DEDAE62084E643004E310C /* TheCoffeeApp */,
 				7D41D61020A3210400FED6F0 /* NotificationService */,
 				27DEDAE52084E643004E310C /* Products */,
@@ -308,7 +305,6 @@
 				27DEDAF22084E643004E310C /* LaunchScreen.storyboard in Resources */,
 				27DEDAEF2084E643004E310C /* Assets.xcassets in Resources */,
 				27DEDAED2084E643004E310C /* Main.storyboard in Resources */,
-				7D41D61C20A334D800FED6F0 /* IMG_0134.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

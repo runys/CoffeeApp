@@ -21,34 +21,22 @@ class CoffeeDealsTableViewController: UITableViewController {
 
     
     
-//    func refreshData(){
-//        self.coffeeDeals = DealDAO.getAllDeals()
-//        self.tableView.reloadData()
-//    }
+ @objc func refreshData(){
+        self.coffeeDeals = DealDAO.getAllDeals()
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.coffeeDeals = DealDAO.getAllDeals()
-        
         self.tableView.estimatedRowHeight = 166
-        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.tableView.reloadData), name: NSNotification.Name(rawValue: "refreshDeal"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CoffeeDealsTableViewController.refreshData), name: NSNotification.Name(rawValue: "refreshDeals"), object: nil)
         
     }
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func receivedDealNotification(_ notification: Notification) {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
