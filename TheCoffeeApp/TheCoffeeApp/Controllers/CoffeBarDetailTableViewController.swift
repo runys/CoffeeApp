@@ -75,6 +75,8 @@ class CoffeBarDetailTableViewController: UITableViewController {
     }
     
     func setupLocation(_ coffeeBar: CoffeeShop) {
+        self.locationMapView.showsUserLocation = true
+        
         let coffeeBarAnnotation: MKPointAnnotation = MKPointAnnotation()
         
         let coffeBarLocation = CLLocationCoordinate2D(latitude: coffeeBar.location.latitude, longitude: coffeeBar.location.longitude)

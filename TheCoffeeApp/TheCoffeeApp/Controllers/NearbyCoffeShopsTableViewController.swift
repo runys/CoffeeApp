@@ -28,6 +28,10 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
@@ -66,7 +70,10 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
             
             coffeeShopCell.nameLabel.text = coffeeShop.name
             coffeeShopCell.topCoffeLabel.text = "☆ \(coffeeShop.topThreeCoffees[0].name)"
-            coffeeShopCell.distanceLabel.text = "\(coffeeShop.distanceFromYou)m from you"
+            
+            let distanceText = String(format: "%.2fkm from you", coffeeShop.distanceFromYou)
+            
+            coffeeShopCell.distanceLabel.text = distanceText
             
             // TODO: Prepare to download the image
             coffeeShopCell.coffeeShopImageView.image = UIImage(named: coffeeShop.imageURL)

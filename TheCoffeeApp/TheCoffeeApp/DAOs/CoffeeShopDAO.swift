@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate var MINIMUN_NEARBY_DISTANCE = 300
+fileprivate var MINIMUN_NEARBY_DISTANCE: Double = 1
 
 class CoffeeShopDAO {
     
@@ -71,16 +71,17 @@ class CoffeeShopDAO {
     
     // TODO: Split the dictionary in two keys
     static func getAll(splitedByMinimum distance: Double) -> [String: [CoffeeShop]] {
-        return [
-            "NEARBY" : [
-                coffeeShops[0],
-                coffeeShops[3]
-            ],
-            "OTHERS" : [
-                coffeeShops[1],
-                coffeeShops[2]
-            ]
-        ]
+        var coffeeBars: [String: [CoffeeShop]] = ["NEARBY" : [], "OTHERS" : []]
+        
+        for coffeeBar in coffeeShops {
+            if coffeeBar.distanceFromYou < MINIMUN_NEARBY_DISTANCE {
+                coffeeBars["NEARBY"]?.append(coffeeBar)
+            } else {
+                coffeeBars["OTHERS"]?.append(coffeeBar)
+            }
+        }
+        
+        return coffeeBars
     }
     
 }
