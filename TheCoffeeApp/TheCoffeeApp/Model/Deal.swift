@@ -8,7 +8,10 @@
 
 import Foundation
 
-class Deal {
+class Deal{
+
+    
+    
     let store: CoffeeShop
     let coffee: Coffee
     let previousPrice: Float

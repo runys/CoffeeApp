@@ -15,7 +15,8 @@ struct Location {
 
 typealias CoffeeListEntry = (coffee: Coffee, rating: Int, price: Float)
 
-class CoffeeShop {
+class CoffeeShop{
+    
     let id: String
     let name: String
     let location: Location

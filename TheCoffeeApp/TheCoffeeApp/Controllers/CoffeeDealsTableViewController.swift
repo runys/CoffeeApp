@@ -9,9 +9,22 @@
 import UIKit
 
 class CoffeeDealsTableViewController: UITableViewController {
+    
 
     var coffeeDeals: [Deal] = []
     
+//    override func viewWillAppear(_ animated: Bool) {
+//                self.coffeeDeals = DealDAO.getAllDeals()
+//        refreshData()
+//    }
+    
+
+    
+    
+//    func refreshData(){
+//        self.coffeeDeals = DealDAO.getAllDeals()
+//        self.tableView.reloadData()
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,8 +33,22 @@ class CoffeeDealsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 166
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tableView.reloadData), name: NSNotification.Name(rawValue: "refreshDeal"), object: nil)
+        
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func receivedDealNotification(_ notification: Notification) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

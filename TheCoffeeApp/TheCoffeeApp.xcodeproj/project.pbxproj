@@ -33,7 +33,34 @@
 		27DEDB1A20863152004E310C /* TipDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1920863152004E310C /* TipDAO.swift */; };
 		27DEDB1C2086315B004E310C /* DealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1B2086315B004E310C /* DealDAO.swift */; };
 		27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */; };
+		7D41D61220A3210400FED6F0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41D61120A3210400FED6F0 /* NotificationService.swift */; };
+		7D41D61620A3210400FED6F0 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D41D60F20A3210400FED6F0 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7D41D61C20A334D800FED6F0 /* IMG_0134.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D41D61420A3210400FED6F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27DEDADC2084E642004E310C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D41D60E20A3210400FED6F0;
+			remoteInfo = NotificationService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7D41D61A20A3210400FED6F0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7D41D61620A3210400FED6F0 /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		277545162099E3EB006BB45F /* CoffeBarDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeBarDetailTableViewController.swift; path = Controllers/CoffeBarDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -64,10 +91,22 @@
 		27DEDB1920863152004E310C /* TipDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDAO.swift; sourceTree = "<group>"; };
 		27DEDB1B2086315B004E310C /* DealDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDAO.swift; sourceTree = "<group>"; };
 		27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkHistoryDAO.swift; sourceTree = "<group>"; };
+		7D41D60F20A3210400FED6F0 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D41D61120A3210400FED6F0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		7D41D61320A3210400FED6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0134.jpg; sourceTree = "<group>"; };
+		7D46C041209C7183001959EA /* TheCoffeeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheCoffeeApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		27DEDAE12084E643004E310C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D41D60C20A3210400FED6F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -91,7 +130,9 @@
 		27DEDADB2084E642004E310C = {
 			isa = PBXGroup;
 			children = (
+				7D41D61B20A334D800FED6F0 /* IMG_0134.jpg */,
 				27DEDAE62084E643004E310C /* TheCoffeeApp */,
+				7D41D61020A3210400FED6F0 /* NotificationService */,
 				27DEDAE52084E643004E310C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				27DEDAE42084E643004E310C /* TheCoffeeApp.app */,
+				7D41D60F20A3210400FED6F0 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +149,7 @@
 		27DEDAE62084E643004E310C /* TheCoffeeApp */ = {
 			isa = PBXGroup;
 			children = (
+				7D46C041209C7183001959EA /* TheCoffeeApp.entitlements */,
 				27D4FAC8208E37190077FAF6 /* CardView.swift */,
 				27BAC0162086515B00962876 /* Custom Cells */,
 				27DEDAEB2084E643004E310C /* Main.storyboard */,
@@ -159,6 +202,15 @@
 			path = DAOs;
 			sourceTree = "<group>";
 		};
+		7D41D61020A3210400FED6F0 /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				7D41D61120A3210400FED6F0 /* NotificationService.swift */,
+				7D41D61320A3210400FED6F0 /* Info.plist */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,15 +221,34 @@
 				27DEDAE02084E643004E310C /* Sources */,
 				27DEDAE12084E643004E310C /* Frameworks */,
 				27DEDAE22084E643004E310C /* Resources */,
+				7D41D61A20A3210400FED6F0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7D41D61520A3210400FED6F0 /* PBXTargetDependency */,
 			);
 			name = TheCoffeeApp;
 			productName = TheCoffeeApp;
 			productReference = 27DEDAE42084E643004E310C /* TheCoffeeApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		7D41D60E20A3210400FED6F0 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D41D61920A3210400FED6F0 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				7D41D60B20A3210400FED6F0 /* Sources */,
+				7D41D60C20A3210400FED6F0 /* Frameworks */,
+				7D41D60D20A3210400FED6F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 7D41D60F20A3210400FED6F0 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -185,12 +256,21 @@
 		27DEDADC2084E642004E310C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Apple Developer Academy";
 				TargetAttributes = {
 					27DEDAE32084E643004E310C = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					7D41D60E20A3210400FED6F0 = {
+						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -209,6 +289,7 @@
 			projectRoot = "";
 			targets = (
 				27DEDAE32084E643004E310C /* TheCoffeeApp */,
+				7D41D60E20A3210400FED6F0 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +302,14 @@
 				27DEDAF22084E643004E310C /* LaunchScreen.storyboard in Resources */,
 				27DEDAEF2084E643004E310C /* Assets.xcassets in Resources */,
 				27DEDAED2084E643004E310C /* Main.storyboard in Resources */,
+				7D41D61C20A334D800FED6F0 /* IMG_0134.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D41D60D20A3210400FED6F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +346,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D41D60B20A3210400FED6F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D41D61220A3210400FED6F0 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D41D61520A3210400FED6F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D41D60E20A3210400FED6F0 /* NotificationService */;
+			targetProxy = 7D41D61420A3210400FED6F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		27DEDAEB2084E643004E310C /* Main.storyboard */ = {
@@ -393,9 +498,11 @@
 		27DEDAF72084E643004E310C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TheCoffeeApp/TheCoffeeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RHRH7MV3VD;
+				DEVELOPMENT_TEAM = H9XRGWLY3K;
 				INFOPLIST_FILE = TheCoffeeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -409,14 +516,50 @@
 		27DEDAF82084E643004E310C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TheCoffeeApp/TheCoffeeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RHRH7MV3VD;
+				DEVELOPMENT_TEAM = H9XRGWLY3K;
 				INFOPLIST_FILE = TheCoffeeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D41D61720A3210400FED6F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H9XRGWLY3K;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeApp.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D41D61820A3210400FED6F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H9XRGWLY3K;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeApp.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +582,15 @@
 			buildConfigurations = (
 				27DEDAF72084E643004E310C /* Debug */,
 				27DEDAF82084E643004E310C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D41D61920A3210400FED6F0 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D41D61720A3210400FED6F0 /* Debug */,
+				7D41D61820A3210400FED6F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

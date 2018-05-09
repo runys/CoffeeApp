@@ -35,4 +35,29 @@ class DealDAO {
         return dealsDatabase
     }
     
+    static func addDeal(deal: Deal) {
+        dealsDatabase.append(deal)
+    }
+    
+    
+    static func makeDeal(_ notificationDictionary: [String: AnyObject]) -> Deal? {
+        if let storeId = notificationDictionary["store"] as? Int,
+            let coffeId = notificationDictionary["coffe"] as? Int,
+            let previousPrice = notificationDictionary["previousPrice"] as? Float,
+            let discountedPrice = notificationDictionary["discountedPrice"] as? Float {
+            
+            let coffeShops = CoffeeShopDAO.getAll()
+            
+            let deal = Deal(store: coffeShops[storeId],
+                            coffee: coffeShops[storeId].coffees[0].coffee,
+                            previousPrice: coffeShops[storeId].coffees[0].price,
+                            newPrice: coffeShops[storeId].coffees[0].price * 0.8)
+            addDeal(deal: deal)
+            return deal
+           
+        }
+        return nil
+    }
+    
+    
 }
