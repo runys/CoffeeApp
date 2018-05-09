@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class CoffeBarDetailTableViewController: UITableViewController {
-    
+    private let mapSpan: MKCoordinateSpan = MKCoordinateSpanMake(0.005, 0.005)
     private let cornerRadius: CGFloat = 5.0
     
     var coffeeBar: CoffeeShop?
@@ -23,9 +23,17 @@ class CoffeBarDetailTableViewController: UITableViewController {
     @IBOutlet weak var locationMapView: MKMapView!
     
     @IBOutlet weak var firstCoffeeImageView: UIImageView!
+    @IBOutlet weak var firstCoffeeLabel: UILabel!
+    
     @IBOutlet weak var secondCoffeeImageView: UIImageView!
+    @IBOutlet weak var secondCoffeeLabel: UILabel!
+    
     @IBOutlet weak var thirdCoffeeImageView: UIImageView!
+    @IBOutlet weak var thirdCoffeeLabel: UILabel!
+    
     @IBOutlet weak var forthCoffeeImageView: UIImageView!
+    @IBOutlet weak var forthCoffeeLabel: UILabel!
+    
     
     @IBOutlet weak var closeButton: UIButton!
     
@@ -67,7 +75,15 @@ class CoffeBarDetailTableViewController: UITableViewController {
     }
     
     func setupLocation(_ coffeeBar: CoffeeShop) {
-        // TODO: Set up the coffee bar location in the map
+        let coffeeBarAnnotation: MKPointAnnotation = MKPointAnnotation()
+        
+        let coffeBarLocation = CLLocationCoordinate2D(latitude: coffeeBar.location.latitude, longitude: coffeeBar.location.longitude)
+        
+        coffeeBarAnnotation.coordinate = coffeBarLocation
+        
+        self.locationMapView.addAnnotation(coffeeBarAnnotation)
+        
+        self.locationMapView.region = MKCoordinateRegion(center: coffeBarLocation, span: self.mapSpan)
     }
     
     func setUpCoffeeImages(_ coffeeBar: CoffeeShop) {
@@ -77,12 +93,16 @@ class CoffeBarDetailTableViewController: UITableViewController {
             switch index {
             case 0:
                 self.firstCoffeeImageView.image = UIImage(named: coffee.imageURL)
+                self.firstCoffeeLabel.text = coffee.name
             case 1:
                 self.secondCoffeeImageView.image = UIImage(named: coffee.imageURL)
+                self.secondCoffeeLabel.text = coffee.name
             case 2:
                 self.thirdCoffeeImageView.image = UIImage(named: coffee.imageURL)
+                self.thirdCoffeeLabel.text = coffee.name
             case 3:
                 self.forthCoffeeImageView.image = UIImage(named: coffee.imageURL)
+                self.forthCoffeeLabel.text = coffee.name
             default:
                 break
             }
