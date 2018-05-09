@@ -32,19 +32,19 @@ class DrinkingHistoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkHistoryIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "drinkHistoryIdentifier", for: indexPath) as! DrinkHistoryTableViewCell
         
         let drinkRecord = self.history[indexPath.row]
         
         let coffeeName = drinkRecord.coffee.name
         let placeName = drinkRecord.place.name
         
-        let when = "\(drinkRecord.date) \(drinkRecord.time)"
+        let when = "\(drinkRecord.date) at \(drinkRecord.time)"
         
-        // Coffe name
-        cell.textLabel?.text = "\(when)"
-        // Time and place
-        cell.detailTextLabel?.text = "\(coffeeName) at \(placeName)"
+        cell.coffeeNameLabel.text = coffeeName
+        cell.locationNameLabel.text = placeName
+        
+        cell.dateAndTimeLabel.text = "\(when)"
         
         return cell
     }

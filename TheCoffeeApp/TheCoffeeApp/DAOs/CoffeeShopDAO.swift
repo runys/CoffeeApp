@@ -8,46 +8,60 @@
 
 import Foundation
 
-fileprivate var MINIMUN_NEARBY_DISTANCE = 300
+fileprivate var MINIMUN_NEARBY_DISTANCE: Double = 1
 
 class CoffeeShopDAO {
     
     private static var coffeeShops: [CoffeeShop] = [
         CoffeeShop(id: "001",
                    name: "University Bar",
-                   location: Location(latitude: 0, longitude: 0),
-                   imageURL: "coffee_shop_placeholder",
+                   location: Location(latitude: 40.8362063, longitude: 14.3061987),
+                   imageURL: "coffeebar-placeholder-1",
                    description: "That's a very good coffe bar nearby the Academy. Nunzia is a sweetheart.",
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
-                    (coffee: CoffeeDAO.getCoffee("002")!, rating: 1, price: 1.9)
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 1, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("004")!, rating: 3, price: 1.5)
             ]),
         CoffeeShop(id: "002",
-                   name: "Coffee Bar",
-                   location: Location(latitude: 0, longitude: 0),
-                   imageURL: "coffee_shop_placeholder",
+                   name: "Bar Lorenzo",
+                   location: Location(latitude: 40.8354467, longitude: 14.3042449),
+                   imageURL: "coffeebar-placeholder-2",
                    description: "A random placeholder coffee bar to increase the amount of entries in the database.",
                    coffees: [
-                    (coffee: CoffeeDAO.getCoffee("003")!, rating: 2, price: 1.5),
-                    (coffee: CoffeeDAO.getCoffee("004")!, rating: 1, price: 0.9)
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 1, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("002")!, rating: 3, price: 1.5)
             ]),
         CoffeeShop(id: "003",
-                   name: "Random Bar",
-                   location: Location(latitude: 0, longitude: 0),
-                   imageURL: "coffee_shop_placeholder",
+                   name: "Mexico",
+                   location: Location(latitude: 40.8462759, longitude: 14.2515021),
+                   imageURL: "coffeebar-placeholder-3",
                    description: "That's a random coffe bar added for testing purposes. Enjoy the randomness.",
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("005")!, rating: 2, price: 0.9),
                     (coffee: CoffeeDAO.getCoffee("006")!, rating: 1, price: 1.9)
             ]),
         CoffeeShop(id: "004",
-                   name: "Another Bar",
-                   location: Location(latitude: 0, longitude: 0),
-                   imageURL: "coffee_shop_placeholder",
-                   description: "That's a placeholder coffe bar added for testing purposes, again. Soon to be replaced with real information, hopefully.",
+                   name: "Il Vero Bar del Professore",
+                   location: Location(latitude: 40.8462759, longitude: 14.2515021),
+                   imageURL: "coffeebar-placeholder-4",
+                   description: "A well known coffee bar in the city of Napoli. Home of the famous Cafè Nocciola.",
                    coffees: [
-                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9),
-                    (coffee: CoffeeDAO.getCoffee("008")!, rating: 1, price: 1.9)
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("009")!, rating: 1, price: 1.5),
+                    (coffee: CoffeeDAO.getCoffee("006")!, rating: 2, price: 1.0),
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9)
+            ]),
+        CoffeeShop(id: "005",
+                   name: "Gran Caffè Gambrinus",
+                   location: Location(latitude: 40.8462759, longitude: 14.2515021),
+                   imageURL: "coffeebar-placeholder-5",
+                   description: "",
+                   coffees: [
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 1.5),
+                    (coffee: CoffeeDAO.getCoffee("009")!, rating: 1, price: 1.5),
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 1.5)
             ])
     ]
     
@@ -57,16 +71,17 @@ class CoffeeShopDAO {
     
     // TODO: Split the dictionary in two keys
     static func getAll(splitedByMinimum distance: Double) -> [String: [CoffeeShop]] {
-        return [
-            "NEARBY" : [
-                coffeeShops[0],
-                coffeeShops[3]
-            ],
-            "OTHERS" : [
-                coffeeShops[1],
-                coffeeShops[2]
-            ]
-        ]
+        var coffeeBars: [String: [CoffeeShop]] = ["NEARBY" : [], "OTHERS" : []]
+        
+        for coffeeBar in coffeeShops {
+            if coffeeBar.distanceFromYou < MINIMUN_NEARBY_DISTANCE {
+                coffeeBars["NEARBY"]?.append(coffeeBar)
+            } else {
+                coffeeBars["OTHERS"]?.append(coffeeBar)
+            }
+        }
+        
+        return coffeeBars
     }
     
 }

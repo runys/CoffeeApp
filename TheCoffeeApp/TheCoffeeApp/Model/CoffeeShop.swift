@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct Location {
-    var latitude: Double
-    var longitude: Double
-}
-
 typealias CoffeeListEntry = (coffee: Coffee, rating: Int, price: Float)
 
 class CoffeeShop{
@@ -59,8 +54,8 @@ class CoffeeShop{
         return topThreeCoffees
     }
     
-    var distanceFromYou: Int {
-        // TODO: Calculate distance in meters
-        return 0
+    var distanceFromYou: Double {
+        let kmDistance = LocationServices.shared.distance(to: self.location) / 1000
+        return kmDistance
     }
 }
