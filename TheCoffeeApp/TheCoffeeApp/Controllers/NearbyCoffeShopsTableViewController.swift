@@ -69,7 +69,7 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
            let coffeeShop = coffeeShopForCell{
             
             coffeeShopCell.nameLabel.text = coffeeShop.name
-            coffeeShopCell.topCoffeLabel.text = "☆ \(coffeeShop.topThreeCoffees[0].name)"
+            coffeeShopCell.topCoffeLabel.text = "☆ Coffee \(coffeeShop.topThreeCoffees[0].name)"
             
             let distanceText = String(format: "%.2fkm from you", coffeeShop.distanceFromYou)
             
