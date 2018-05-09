@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.setUpColorPalette()
+        
         return true
     }
 
@@ -42,5 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    private func setUpColorPalette() {
+        window?.tintColor = ColorPallete.darkBackground
+        
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.tintColor = ColorPallete.darkPrimary
+        //navigationBarAppearance.barTintColor = ColorPallete.lightPrimary
+        
+        
+        let tabBarAppearance = UITabBar.appearance()
+        
+        tabBarAppearance.tintColor = ColorPallete.darkBackground
+        //tabBarAppearance.barTintColor = ColorPallete.lightPrimary
+        //tabBarAppearance.unselectedItemTintColor = ColorPallete.darkBackground
+    }
 }
 
