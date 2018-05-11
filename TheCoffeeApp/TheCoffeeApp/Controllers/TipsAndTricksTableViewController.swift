@@ -21,9 +21,22 @@ class TipsAndTricksTableViewController: UITableViewController {
         self.tips = TipDAO.getAllTips()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(TipsAndTricksTableViewController.refreshData), name: NSNotification.Name(rawValue: "refreshTips"), object: nil)
+        
     }
 
-
+    @objc func refreshData(){
+        //
+        DispatchQueue.main.async {
+            self.tips = TipDAO.getAllTips()
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: [IndexPath(row: self.tips.count-1, section: 0)], with: .automatic)
+            self.tableView.endUpdates()
+        }
+        
+    }
+        
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

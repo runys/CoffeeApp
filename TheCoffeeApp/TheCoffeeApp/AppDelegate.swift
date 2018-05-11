@@ -21,14 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        registerForPushNotifications(application)
-        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-            let aps = notification["aps"] as! [String: AnyObject]
-            _ =  DealDAO.makeDeal(aps)
-            
-        }
-        
         // Register with APNs
+        registerForPushNotifications(application)
+        
+//        no need with content-available
+//        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+//            _ =  DealDAO.makeDeal(notification)
+//        (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+//        }
+        self.setUpColorPalette()
+        
         return true
     }
     
@@ -46,11 +48,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         
         // Set up actions.
-        let viewAction = UNNotificationAction(identifier: "viewAction", title: "View", options: [.authenticationRequired, .foreground])
-        let dismissAction = UNNotificationAction(identifier: "dismissAction", title: "Dismiss", options: [.authenticationRequired])
+        let likeAction = UNNotificationAction(identifier: "likeAction", title: "Like", options: [.authenticationRequired, .foreground])
+        let dislikeAction = UNNotificationAction(identifier: "dislikeAction", title: "Dislike", options: [.authenticationRequired, .foreground])
+        let commentAction = UNTextInputNotificationAction(identifier: "comment-action",
+                                                          title: "Comment",
+                                                          options: [.authenticationRequired, .foreground],
+                                                          textInputButtonTitle: "Post",
+                                                          textInputPlaceholder: "Comment")
         
         // Set up categories.
-        let dealCategory = UNNotificationCategory(identifier: "dealCategory", actions: [viewAction, dismissAction], intentIdentifiers: [], options: [])
+        let dealCategory = UNNotificationCategory(identifier: "dealCategory", actions: [likeAction,dislikeAction, commentAction], intentIdentifiers: [], options: [])
         UNUserNotificationCenter.current().setNotificationCategories([dealCategory])
         
         application.registerForRemoteNotifications()
@@ -66,10 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let userInfo = userInfo as? [String : AnyObject] {
+            let aps = userInfo["aps"] as! [String: AnyObject]
         
-       let aps = userInfo["aps"] as! [String: AnyObject]
-        _ = DealDAO.makeDeal(aps)
-        (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+            if aps["content-available"] as? Int == 1 {
+                     _ =  TipDAO.makeTip(userInfo)
+                
+            } else {
+                _ =  DealDAO.makeDeal(userInfo)
+                (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+                
+        }
+            
+        completionHandler(.newData)
+        } else {
+              completionHandler(.noData)
+        }
+                
+
 
     }
     
@@ -96,15 +117,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
 
-////    handling the notification and perform actions in reply of the user choosen action
+//    handling the notification and perform actions in reply of the user choosen action
+    
 //    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void){
-//        if response.actionIdentifier ==  "viewAction" {
-//            let aps = response.notification.request.content.userInfo["aps"] as! [String : AnyObject]
-//            _ =  DealDAO.makeDeal(aps)
+//        let userInfo = response.notification.request.content.userInfo
+
+//        if let newDeal = DealDAO.makeDeal(userInfo) {
+//
 //            (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
 //
-//        } else if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+//        }
+//        if response.actionIdentifier ==  "likeAction" {
+//            print("handle the like action")
 //
+//        } else if response.actionIdentifier == "CommentAction" {
+//            print("Handle the comment action")
 //        } else {
 //            print("No custom action identifiers chosen")
 //        }
@@ -120,7 +147,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func enableRemoteNotificationFeatures(){
         //  enableRemoteNotificationFeatures
     }
-    
-    
+
+    private func setUpColorPalette() {
+        window?.tintColor = ColorPallete.darkBackground
+        
+        let navigationBarAppearance = UINavigationBar.appearance()
+        
+        navigationBarAppearance.tintColor = ColorPallete.darkPrimary
+        //navigationBarAppearance.barTintColor = ColorPallete.lightPrimary
+        
+        
+        let tabBarAppearance = UITabBar.appearance()
+        
+        tabBarAppearance.tintColor = ColorPallete.darkBackground
+        //tabBarAppearance.barTintColor = ColorPallete.lightPrimary
+        //tabBarAppearance.unselectedItemTintColor = ColorPallete.darkBackground
+    }
 }
 

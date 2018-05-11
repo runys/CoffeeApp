@@ -19,4 +19,21 @@ class TipDAO {
     static func getAllTips() -> [Tip] {
         return tipsDatabase
     }
+    
+    static func addTip(tip: Tip) {
+        tipsDatabase.append(tip)
+    }
+    
+    static func makeTip(_ notificationDictionary: [String: AnyObject]) -> Tip? {
+        if let subject = notificationDictionary["subject"] as? String,
+            let headline = notificationDictionary["headline"] as? String,
+            let description = notificationDictionary["description"] as? String{
+            let tip = Tip(subject: subject, headline: headline, description: description)
+            addTip(tip: tip)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "refreshTips"), object: self)
+            return tip
+            
+        }
+        return nil
+    }
 }

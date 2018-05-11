@@ -69,6 +69,12 @@ class CoffeeShopDAO {
         return coffeeShops
     }
     
+    static func getCoffeShopById(idCoffeShop: String) -> CoffeeShop? {
+        return coffeeShops.filter({ (coffeShopItem: CoffeeShop) -> Bool in
+            return coffeShopItem.id == idCoffeShop
+        }).first
+    }
+    
     // TODO: Split the dictionary in two keys
     static func getAll(splitedByMinimum distance: Double) -> [String: [CoffeeShop]] {
         var coffeeBars: [String: [CoffeeShop]] = ["NEARBY" : [], "OTHERS" : []]

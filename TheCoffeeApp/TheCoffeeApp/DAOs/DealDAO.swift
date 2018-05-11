@@ -52,17 +52,12 @@ class DealDAO {
     
     
     static func makeDeal(_ notificationDictionary: [String: AnyObject]) -> Deal? {
-        if let storeId = notificationDictionary["store"] as? Int,
-            let coffeId = notificationDictionary["coffe"] as? Int,
-            let previousPrice = notificationDictionary["previousPrice"] as? Float,
-            let discountedPrice = notificationDictionary["discountedPrice"] as? Float {
-            
-            let coffeShops = CoffeeShopDAO.getAll()
-            
-            let deal = Deal(store: coffeShops[storeId],
-                            coffee: coffeShops[storeId].coffees[0].coffee,
-                            previousPrice: coffeShops[storeId].coffees[0].price,
-                            newPrice: coffeShops[storeId].coffees[0].price * 0.8)
+        if let coffeeShopId = notificationDictionary["coffeShopId"] as? String,
+           let coffeShop = CoffeeShopDAO.getCoffeShopById(idCoffeShop: coffeeShopId){
+            let deal = Deal(store: coffeShop,
+                            coffee: coffeShop.coffees[0].coffee,
+                            previousPrice: coffeShop.coffees[0].price,
+                            newPrice: coffeShop.coffees[0].price * 0.8)
             addDeal(deal: deal)
             NotificationCenter.default.post(name: Notification.Name(rawValue: "refreshDeals"), object: self)
             return deal

@@ -13,17 +13,18 @@ class CoffeeDealsTableViewController: UITableViewController {
 
     var coffeeDeals: [Deal] = []
     
-//    override func viewWillAppear(_ animated: Bool) {
-//                self.coffeeDeals = DealDAO.getAllDeals()
-//        refreshData()
-//    }
-    
 
-    
-    
  @objc func refreshData(){
-        self.coffeeDeals = DealDAO.getAllDeals()
-        self.tableView.reloadData()
+//
+        DispatchQueue.main.async {
+            self.coffeeDeals = DealDAO.getAllDeals()
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: [IndexPath(row: self.coffeeDeals.count-1, section: 0)], with: .automatic)
+            self.tableView.endUpdates()
+
+//                self.tableView.reloadData()
+    }
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
