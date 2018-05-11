@@ -54,7 +54,7 @@ class DealDAO {
     static func makeDeal(_ notificationDictionary: [String: AnyObject]) -> Deal? {
         if let coffeeShopId = notificationDictionary["coffeShopId"] as? String,
            let coffeShop = CoffeeShopDAO.getCoffeShopById(idCoffeShop: coffeeShopId){
-            let deal = Deal(store: coffeShop,
+           let deal = Deal(store: coffeShop,
                             coffee: coffeShop.coffees[0].coffee,
                             previousPrice: coffeShop.coffees[0].price,
                             newPrice: coffeShop.coffees[0].price * 0.8)

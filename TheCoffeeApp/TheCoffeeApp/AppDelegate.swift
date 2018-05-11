@@ -67,31 +67,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Handle remote notification registration.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
         // Forward the token to your provider, using a custom method.
-        self.enableRemoteNotificationFeatures()
         self.forwardTokenToServer(deviceToken: deviceToken)
     }
     
-
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let userInfo = userInfo as? [String : AnyObject] {
             let aps = userInfo["aps"] as! [String: AnyObject]
-        
-            if aps["content-available"] as? Int == 1 {
-                     _ =  TipDAO.makeTip(userInfo)
-                
-            } else {
-                _ =  DealDAO.makeDeal(userInfo)
-                (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
-                
+            if  aps["content-available"] as? Int == 1 {
+                if aps["category"] as? String == "tipCategory" {
+                    _ =  TipDAO.makeTip(userInfo)
+                } else if aps["category"] as? String == "dealCategory" {
+                    _ =  DealDAO.makeDeal(userInfo)
+                    (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+                }
+                completionHandler(.newData)
+            }
         }
-            
-        completionHandler(.newData)
-        } else {
-              completionHandler(.noData)
-        }
-                
-
-
     }
     
     func forwardTokenToServer(deviceToken: Data){
@@ -143,10 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         //  disableRemoteNotificationFeatures
     }
     
-    
-    func enableRemoteNotificationFeatures(){
-        //  enableRemoteNotificationFeatures
-    }
+
 
     private func setUpColorPalette() {
         window?.tintColor = ColorPallete.darkBackground
