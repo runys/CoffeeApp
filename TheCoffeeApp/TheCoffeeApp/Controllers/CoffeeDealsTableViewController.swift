@@ -37,7 +37,11 @@ class CoffeeDealsTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(CoffeeDealsTableViewController.refreshData), name: NSNotification.Name(rawValue: "refreshDeals"), object: nil)
         
     }
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -341,6 +341,9 @@
 							com.apple.Push = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
 						};
 					};
 					7D41D60E20A3210400FED6F0 = {

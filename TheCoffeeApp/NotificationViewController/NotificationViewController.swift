@@ -34,7 +34,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         // Get the attachment and set the image view.
         if attachment.url.startAccessingSecurityScopedResource(),
             let data = try? Data(contentsOf: attachment.url) {
-            coffeImage.contentMode = .scaleAspectFit
+//            coffeImage.contentMode = .scaleAspectFit
             coffeImage.image = UIImage(data: data)
             attachment.url.stopAccessingSecurityScopedResource()
         }
