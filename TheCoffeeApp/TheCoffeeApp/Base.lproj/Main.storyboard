@@ -739,7 +739,7 @@
                     <navigationItem key="navigationItem" title="Coffee Reminders" id="hqJ-9o-cq5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gvg-QT-um2">
                             <connections>
-                                <segue destination="dee-R6-Mcu" kind="presentation" id="5jY-r4-mvN"/>
+                                <segue destination="o6p-RF-RUT" kind="presentation" modalTransitionStyle="coverVertical" id="5jY-r4-mvN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -748,70 +748,82 @@
             </objects>
             <point key="canvasLocation" x="1534" y="1093"/>
         </scene>
-        <!--View Controller-->
+        <!--New Reminder-->
         <scene sceneID="Lve-aY-5Hj">
             <objects>
-                <viewController id="dee-R6-Mcu" sceneMemberID="viewController">
+                <viewController id="dee-R6-Mcu" customClass="NewReminderViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RkC-OT-Tlm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skJ-Kt-LoG">
-                                <rect key="frame" x="16" y="36" width="48" height="30"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="Ewa-VV-8U8" kind="unwind" unwindAction="unwindWithSegue:" id="Pq1-A4-owL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5q-Ah-RUO">
-                                <rect key="frame" x="313" y="36" width="46" height="30"/>
-                                <state key="normal" title="Create"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zT-Ka-uoF">
-                                <rect key="frame" x="16" y="82" width="343" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="crd-gI-gIE">
-                                <rect key="frame" x="16" y="130" width="343" height="128"/>
+                                <rect key="frame" x="16" y="132" width="343" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="owC-gm-jkV"/>
+                                    <constraint firstAttribute="height" constant="128" id="N8T-QL-NpR"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="546792098.253546">
                                     <!--2018-04-30 14:41:38 +0000-->
                                 </date>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-5r-kCP">
-                                <rect key="frame" x="16" y="290" width="343" height="128"/>
+                                <rect key="frame" x="16" y="328" width="343" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="pNr-lh-cxW"/>
+                                    <constraint firstAttribute="height" constant="128" id="GG5-ps-sJb"/>
                                 </constraints>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you want to be reminded?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qh-rB-WAP">
+                                <rect key="frame" x="16" y="80" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8E2-RZ-327"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which coffee type do you want to take at this time?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpi-j8-313">
+                                <rect key="frame" x="16" y="276" width="343" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="YYc-Z3-vES"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="crd-gI-gIE" secondAttribute="trailing" constant="16" id="21S-ef-O91"/>
-                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="yPz-5r-kCP" secondAttribute="trailing" constant="16" id="3Yh-BX-9TR"/>
-                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="2zT-Ka-uoF" secondAttribute="trailing" constant="16" id="3rw-fu-QGQ"/>
-                            <constraint firstItem="2zT-Ka-uoF" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="3yl-Vi-lCq"/>
-                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="h5q-Ah-RUO" secondAttribute="trailing" constant="16" id="7RP-aa-XU0"/>
-                            <constraint firstItem="crd-gI-gIE" firstAttribute="top" secondItem="2zT-Ka-uoF" secondAttribute="bottom" constant="16" id="LXk-mM-hVq"/>
-                            <constraint firstItem="yPz-5r-kCP" firstAttribute="top" secondItem="crd-gI-gIE" secondAttribute="bottom" constant="32" id="QCT-Od-4Os"/>
-                            <constraint firstItem="skJ-Kt-LoG" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="Ucp-qB-4g7"/>
-                            <constraint firstItem="yPz-5r-kCP" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="WCz-lf-7Uc"/>
-                            <constraint firstItem="h5q-Ah-RUO" firstAttribute="top" secondItem="dtP-sb-Oy7" secondAttribute="top" constant="16" id="aqX-p0-zve"/>
-                            <constraint firstItem="2zT-Ka-uoF" firstAttribute="top" secondItem="skJ-Kt-LoG" secondAttribute="bottom" constant="16" id="eBt-W3-MWF"/>
-                            <constraint firstItem="skJ-Kt-LoG" firstAttribute="top" secondItem="dtP-sb-Oy7" secondAttribute="top" constant="16" id="iNc-Ge-76V"/>
-                            <constraint firstItem="crd-gI-gIE" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="vPR-Tw-i5f"/>
+                            <constraint firstItem="Gpi-j8-313" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="0Kc-U4-usx"/>
+                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="yPz-5r-kCP" secondAttribute="trailing" constant="16" id="1bF-Ox-hCq"/>
+                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="crd-gI-gIE" secondAttribute="trailing" constant="16" id="3xu-4x-fty"/>
+                            <constraint firstItem="crd-gI-gIE" firstAttribute="top" secondItem="2qh-rB-WAP" secondAttribute="bottom" constant="8" id="Bb4-oV-xyk"/>
+                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="Gpi-j8-313" secondAttribute="trailing" constant="16" id="Oqh-Cv-vEQ"/>
+                            <constraint firstItem="yPz-5r-kCP" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="PmT-ll-cCU"/>
+                            <constraint firstItem="dtP-sb-Oy7" firstAttribute="trailing" secondItem="2qh-rB-WAP" secondAttribute="trailing" constant="16" id="ROB-oS-eHQ"/>
+                            <constraint firstItem="2qh-rB-WAP" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="igU-L7-mh9"/>
+                            <constraint firstItem="2qh-rB-WAP" firstAttribute="top" secondItem="dtP-sb-Oy7" secondAttribute="top" constant="16" id="lIg-93-CtF"/>
+                            <constraint firstItem="yPz-5r-kCP" firstAttribute="top" secondItem="Gpi-j8-313" secondAttribute="bottom" constant="8" id="toh-bh-KZS"/>
+                            <constraint firstItem="Gpi-j8-313" firstAttribute="top" secondItem="crd-gI-gIE" secondAttribute="bottom" constant="16" id="vCx-a1-AAX"/>
+                            <constraint firstItem="crd-gI-gIE" firstAttribute="leading" secondItem="dtP-sb-Oy7" secondAttribute="leading" constant="16" id="xWG-Lf-yF5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtP-sb-Oy7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Reminder" id="13w-jC-V8F">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NsM-VC-2qy">
+                            <connections>
+                                <segue destination="pfQ-6S-DUh" kind="unwind" unwindAction="unwindWithSegue:" id="xtd-Gz-TL4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LYC-bk-Hr6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="coffeePickerView" destination="yPz-5r-kCP" id="zVf-Eh-iDh"/>
+                        <outlet property="timeDatePicker" destination="crd-gI-gIE" id="6CF-mO-eZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlP-xL-yNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ewa-VV-8U8" userLabel="Exit" sceneMemberID="exit"/>
+                <exit id="pfQ-6S-DUh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2333.5999999999999" y="1092.5037481259371"/>
+            <point key="canvasLocation" x="4028" y="1092.5037481259371"/>
         </scene>
         <!--Tips and Tricks-->
         <scene sceneID="irO-PN-D9U">
@@ -869,6 +881,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fm9-Ld-8rF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q3j-bX-aEB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o6p-RF-RUT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R0d-9D-Yyw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dee-R6-Mcu" kind="relationship" relationship="rootViewController" id="ynI-6G-rPJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdA-LO-ulh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3088.8000000000002" y="1092.5037481259371"/>
         </scene>
     </scenes>
     <resources>
