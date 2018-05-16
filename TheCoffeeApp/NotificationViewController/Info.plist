@@ -29,7 +29,7 @@
 			<key>UNNotificationExtensionCategory</key>
 			<string>dealCategory</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>0.115</real>
+			<real>0.125</real>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>

@@ -19,14 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
          application.applicationIconBadgeNumber = 0
     }
     
-    //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Register with APNs
         registerForPushNotifications(application)
         
-//        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-//          // code the desired actions
-//        }
+        //  if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+        //      // code the desired actions
+        //  }
         self.setUpColorPalette()
         
         return true
@@ -70,8 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let userInfo = userInfo as? [String : AnyObject] {
-//
-//            
             let aps = userInfo["aps"] as! [String: AnyObject]
             if aps["content-available"] as? Int == 1 {
                 if aps["category"] as? String == "tipCategory" {
