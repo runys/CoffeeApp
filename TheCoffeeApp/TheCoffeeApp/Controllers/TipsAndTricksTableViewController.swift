@@ -25,6 +25,10 @@ class TipsAndTricksTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(TipsAndTricksTableViewController.refreshData), name: NSNotification.Name(rawValue: "refreshTips"), object: nil)
         
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     @objc func refreshData(){
         //

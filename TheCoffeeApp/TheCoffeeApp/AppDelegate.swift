@@ -24,10 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Register with APNs
         registerForPushNotifications(application)
         
-//        no need with content-available
 //        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
-//            _ =  DealDAO.makeDeal(notification)
-//        (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+//          // code the desired actions
 //        }
         self.setUpColorPalette()
         
@@ -74,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let userInfo = userInfo as? [String : AnyObject] {
             let aps = userInfo["aps"] as! [String: AnyObject]
-            if  aps["content-available"] as? Int == 1 {
+            if aps["content-available"] as? Int == 1 {
                 if aps["category"] as? String == "tipCategory" {
                     _ =  TipDAO.makeTip(userInfo)
                 } else if aps["category"] as? String == "dealCategory" {
@@ -100,43 +98,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
 
-    
-
-//
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // Allowing banners to show up in the app.
         completionHandler([.alert, .sound])
     }
-
-
-//    handling the notification and perform actions in reply of the user choosen action
     
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void){
-//        let userInfo = response.notification.request.content.userInfo
-
-//        if let newDeal = DealDAO.makeDeal(userInfo) {
-//
-//            (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
-//
-//        }
-//        if response.actionIdentifier ==  "likeAction" {
-//            print("handle the like action")
-//
-//        } else if response.actionIdentifier == "CommentAction" {
-//            print("Handle the comment action")
-//        } else {
-//            print("No custom action identifiers chosen")
-//        }
-//        completionHandler()
-//    }
-    
-    
-    func disableRemoteNotificationFeatures(){
-        //  disableRemoteNotificationFeatures
-    }
-    
-
-
     private func setUpColorPalette() {
         window?.tintColor = ColorPallete.darkBackground
         
@@ -151,6 +117,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         tabBarAppearance.tintColor = ColorPallete.darkBackground
         //tabBarAppearance.barTintColor = ColorPallete.lightPrimary
         //tabBarAppearance.unselectedItemTintColor = ColorPallete.darkBackground
+    }
+    
+    func disableRemoteNotificationFeatures(){
+        //  disable Remote Notification Features, if needed
     }
 }
 
