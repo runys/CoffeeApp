@@ -50,8 +50,16 @@ class CoffeeRemindersTableViewController: UITableViewController {
         
     }
     
-    @IBAction func unwind(withSegue: UIStoryboardSegue) {
+    @IBAction func cancel(withSegue: UIStoryboardSegue) {
         print("Reminders creation canceled.")
     }
+    
+    @IBAction func reminderCreated(withSegue: UIStoryboardSegue) {
+        print("Reminders created.")
+        
+        
+        self.tableView.reloadData()
+    }
+    
 
 }

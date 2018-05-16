@@ -810,20 +810,25 @@
                     <navigationItem key="navigationItem" title="New Reminder" id="13w-jC-V8F">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NsM-VC-2qy">
                             <connections>
-                                <segue destination="pfQ-6S-DUh" kind="unwind" unwindAction="unwindWithSegue:" id="xtd-Gz-TL4"/>
+                                <segue destination="pfQ-6S-DUh" kind="unwind" identifier="cancelSegueIdentifier" unwindAction="cancelWithSegue:" id="qhK-St-bva"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LYC-bk-Hr6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="LYC-bk-Hr6">
+                            <connections>
+                                <action selector="createCoffeeReminder:" destination="dee-R6-Mcu" id="olS-qk-5Tf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="coffeePickerView" destination="yPz-5r-kCP" id="zVf-Eh-iDh"/>
                         <outlet property="timeDatePicker" destination="crd-gI-gIE" id="6CF-mO-eZP"/>
+                        <segue destination="pfQ-6S-DUh" kind="unwind" identifier="doneSegueIdentifier" unwindAction="reminderCreatedWithSegue:" id="gi9-SA-Z6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hlP-xL-yNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pfQ-6S-DUh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="1092.5037481259371"/>
+            <point key="canvasLocation" x="3108" y="838"/>
         </scene>
         <!--Tips and Tricks-->
         <scene sceneID="irO-PN-D9U">
@@ -898,7 +903,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdA-LO-ulh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3088.8000000000002" y="1092.5037481259371"/>
+            <point key="canvasLocation" x="2362" y="838"/>
         </scene>
     </scenes>
     <resources>

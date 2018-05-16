@@ -49,6 +49,13 @@ class NewReminderViewController: UIViewController {
         
         return CoffeeDAO.getCoffee(coffeeID)!
     }
+    
+    @IBAction func createCoffeeReminder(_ sender: Any) {
+        CoffeeRemindersDAO.createReminder(hour: selectedHour, minute: selectedMinute, coffeeID: selectedCoffee.id)
+        
+        self.performSegue(withIdentifier: "doneSegueIdentifier", sender: nil)
+        
+    }
 }
 
 extension NewReminderViewController: UIPickerViewDataSource, UIPickerViewDelegate {

@@ -10,12 +10,18 @@ import Foundation
 
 class CoffeeRemindersDAO {
     
+    static func getAllReminders() {
+        // TODO: 
+    }
+    
     static func createReminder(hour: Int, minute: Int, coffeeID: String) {
+        let coffee = CoffeeDAO.getCoffee(coffeeID)
         
+        print("[LOG] Reminder created: \(hour):\(minute) for \(coffee!.name)")
     }
     
     static func deleteReminder(identifier: String) {
-        
+        // TODO:
     }
     
 }
