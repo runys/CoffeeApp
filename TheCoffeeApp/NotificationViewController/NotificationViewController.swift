@@ -23,7 +23,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         super.viewDidLoad()
         // Do any required interface initialization here.
         let  size  = view.bounds.size
-        preferredContentSize = CGSize(width: size.width, height: 94)
+        preferredContentSize = CGSize(width: size.width, height: size.height/8)
     }
     
     func didReceive(_ notification: UNNotification) {
@@ -34,7 +34,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         // Get the attachment and set the image view.
         if attachment.url.startAccessingSecurityScopedResource(),
             let data = try? Data(contentsOf: attachment.url) {
-//            coffeImage.contentMode = .scaleAspectFit
             coffeImage.image = UIImage(data: data)
             attachment.url.stopAccessingSecurityScopedResource()
         }
@@ -60,7 +59,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         } else if response.actionIdentifier == "dislikeAction" {
             self.view.backgroundColor = .red
             completion(.doNotDismiss)
-        } else  { // comment
+        } else  { 
             completion(.doNotDismiss)
         }
     }
@@ -68,3 +67,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
 
 }
+
+
+
