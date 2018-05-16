@@ -10,24 +10,39 @@ import UIKit
 
 class CoffeeRemindersTableViewController: UITableViewController {
     
+    var reminders: [CoffeeReminder] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.getReminders()
+    }
+    
+    func getReminders() {
+        CoffeeRemindersDAO.getAllReminders { (coffeeReminders) in
+            self.reminders = coffeeReminders
+            
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.reminders.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkReminderIdentifier", for: indexPath)
 
-
+        let reminder = self.reminders[indexPath.row]
+        
+        cell.textLabel?.text = "\(reminder.coffeeName) at \(reminder.hour):\(reminder.minutes)"
+        
         return cell
     }
 
@@ -57,8 +72,7 @@ class CoffeeRemindersTableViewController: UITableViewController {
     @IBAction func reminderCreated(withSegue: UIStoryboardSegue) {
         print("Reminders created.")
         
-        
-        self.tableView.reloadData()
+        self.getReminders()
     }
     
 
