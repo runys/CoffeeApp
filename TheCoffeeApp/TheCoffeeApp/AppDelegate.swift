@@ -57,9 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Set up categories.
         let dealCategory = UNNotificationCategory(identifier: "dealCategory", actions: [likeAction,dislikeAction, commentAction], intentIdentifiers: [], options: [])
         UNUserNotificationCenter.current().setNotificationCategories([dealCategory])
-        
         application.registerForRemoteNotifications()
-        
+
     }
     
     // Handle remote notification registration.
@@ -71,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if let userInfo = userInfo as? [String : AnyObject] {
+//
+//            
             let aps = userInfo["aps"] as! [String: AnyObject]
             if aps["content-available"] as? Int == 1 {
                 if aps["category"] as? String == "tipCategory" {
