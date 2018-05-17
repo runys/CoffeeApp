@@ -720,6 +720,31 @@
                                     <outlet property="locationNameLabel" destination="SHb-bN-9wH" id="3Ej-m0-BNu"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyStateCell" rowHeight="108" id="JmO-5W-OAe">
+                                <rect key="frame" x="0.0" y="136" width="375" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JmO-5W-OAe" id="dVo-6j-IJv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To have a drink history, you need to set a reminder first " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSx-pp-KTb">
+                                            <rect key="frame" x="16" y="11" width="343" height="86"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="86" id="jgy-ph-uBE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" red="0.23529411759999999" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vSx-pp-KTb" firstAttribute="leading" secondItem="dVo-6j-IJv" secondAttribute="leadingMargin" id="49X-tF-0Gj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vSx-pp-KTb" secondAttribute="trailing" id="COL-es-h6K"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vSx-pp-KTb" secondAttribute="bottom" id="Q2H-08-MGb"/>
+                                        <constraint firstItem="vSx-pp-KTb" firstAttribute="top" secondItem="dVo-6j-IJv" secondAttribute="topMargin" id="mZ4-4h-7gI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="xKK-w7-Lpz" id="Tme-aC-HNp"/>
@@ -742,7 +767,7 @@
         <scene sceneID="dRf-H2-dAf">
             <objects>
                 <tableViewController id="KRZ-3C-Atc" customClass="CoffeeRemindersTableViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lyU-q6-nml">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lyU-q6-nml">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -751,17 +776,42 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6TB-ly-JCS" id="RTC-8g-aXh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vYv-oV-f8v">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="63.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emptyStateCell" rowHeight="108" id="1r6-da-c9m">
+                                <rect key="frame" x="0.0" y="92" width="375" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1r6-da-c9m" id="Ogl-5D-ep0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a coffee reminder and never miss a coffee break!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTb-cR-VhJ">
+                                            <rect key="frame" x="16" y="11" width="343" height="86"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="86" id="a8F-eg-nVg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" red="0.23529411759999999" green="0.33725490200000002" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tTb-cR-VhJ" secondAttribute="trailing" id="B4s-SQ-SUf"/>
+                                        <constraint firstItem="tTb-cR-VhJ" firstAttribute="leading" secondItem="Ogl-5D-ep0" secondAttribute="leadingMargin" id="Hvk-E7-ut2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tTb-cR-VhJ" secondAttribute="bottom" id="igZ-Ri-00w"/>
+                                        <constraint firstItem="tTb-cR-VhJ" firstAttribute="top" secondItem="Ogl-5D-ep0" secondAttribute="topMargin" id="lDL-U3-pGg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -941,7 +991,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coffee-nocciola" width="2016" height="1512"/>
+        <image name="coffee-nocciola" width="1445" height="1445"/>
         <image name="coffeebar-placeholder" width="2016" height="1512"/>
         <image name="icons8-cafe-filled" width="25" height="25"/>
         <image name="icons8-knowledge-sharing-filled" width="25" height="25"/>

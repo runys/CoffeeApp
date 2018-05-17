@@ -31,7 +31,8 @@ class DrinkHistoryDAO {
                                   timestamp: Date().addingTimeInterval(TimeInterval(12000)),
                                   place: coffeeShops[0])
         
-        drinkHistory.append(contentsOf: [record1, record2, record3, record4])
+        // Uncomment to placeholder history records
+        // drinkHistory.append(contentsOf: [record1, record2, record3, record4])
         
         return drinkHistory
     }()
@@ -44,5 +45,9 @@ class DrinkHistoryDAO {
         let coffee = CoffeeDAO.getCoffee(coffeeId)!
         let newEntry = DrinkRecord(didDrink: true, coffee: coffee, timestamp: timestamp, place: coffeeBar)
         drinkHistoryDatabase.append(newEntry)
+        
+        print("[LOG] New drink entry \(coffee.name) at \(timestamp.description)")
+        
+        EventsManager.shared.postEvent("newDrinkEntry")
     }
 }

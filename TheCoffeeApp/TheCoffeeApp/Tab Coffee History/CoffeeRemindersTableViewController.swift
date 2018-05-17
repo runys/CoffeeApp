@@ -35,10 +35,23 @@ class CoffeeRemindersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Empty State
+        if self.reminders.count == 0 {
+            return 1
+        }
+        // Ideal State
         return self.reminders.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Empty State
+        if self.reminders.count == 0 {
+            let cell =
+                tableView.dequeueReusableCell(withIdentifier: "emptyStateCell", for: indexPath)
+            return cell
+        }
+        
+        // Ideal State
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkReminderIdentifier", for: indexPath)
 
         let reminder = self.reminders[indexPath.row]
@@ -54,28 +67,25 @@ class CoffeeRemindersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            let reminderToDelete = self.reminders[indexPath.row]
-            
-            CoffeeRemindersDAO.deleteReminder(reminderToDelete)
-            self.reminders.remove(at: indexPath.row)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if self.reminders.count > 0 {
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                let reminderToDelete = self.reminders[indexPath.row]
+                
+                CoffeeRemindersDAO.deleteReminder(reminderToDelete)
+                self.reminders.remove(at: indexPath.row)
+                
+                // Empty State
+                if self.reminders.count == 0 {
+                    self.tableView.reloadData()
+                } else {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                }
+            }
+        }
     }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-    }
-
     
     // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
     
     @IBAction func cancel(withSegue: UIStoryboardSegue) {
         print("Reminders creation canceled.")
