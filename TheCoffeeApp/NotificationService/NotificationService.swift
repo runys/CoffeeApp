@@ -29,6 +29,7 @@ class NotificationService: UNNotificationServiceExtension {
                 if let error = error {
                     // Handle the case where the download task fails.
                     NSLog("download task failed with \(error)")
+                    // Perform the proper actions for dealing the error scenario
                 } else {
                     // Handle the case where the download task succeeds.
                     if let fileURL = fileURL,
@@ -46,6 +47,8 @@ class NotificationService: UNNotificationServiceExtension {
             
             // Begin download task.
             currentDownloadTask?.resume()
+            
+            // Set the short-look notification updated with the information received from APNs.
             mutableContent.title    = "New Deal!"
             mutableContent.subtitle = coffeName
             mutableContent.body     = coffeShopName
@@ -54,7 +57,7 @@ class NotificationService: UNNotificationServiceExtension {
     
     
     override func serviceExtensionTimeWillExpire() {
-        // Cancel running download task.
+    // Cancel running download task.
         if let downloadTask = currentDownloadTask {
             downloadTask.cancel()
         }

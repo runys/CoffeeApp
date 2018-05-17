@@ -29,6 +29,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     func didReceive(_ notification: UNNotification) {
        let content = notification.request.content
         
+        // Check if there is there is an attachment and if not return.
         guard let attachment = notification.request.content.attachments.first else { return }
         
         // Get the attachment and set the image view.
@@ -38,12 +39,13 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
             attachment.url.stopAccessingSecurityScopedResource()
         }
         
-
+        // Get the information sent through the payload.
         if let coffeName = content.userInfo["coffeName"] as? String,
             let coffeShopName = content.userInfo["coffeShopName"] as? String,
             let discountedPrice = content.userInfo["discountedPrice"] as? String,
             let fullPrice = content.userInfo["fullPrice"] as? String {
         
+        // Set the labels of the long-look notification
         self.coffeName.text = coffeName
         self.coffeShopName.text = coffeShopName
         self.discountedPrice.text = discountedPrice
@@ -51,8 +53,10 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         }
     }
     
+    // Handle the custom action when the long-look notification appear.
+    // It is possible to update the notification appearance according to the selected action.
     func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
-//        server.postEventResponse(response)
+        // You can here send also the response to the server, e.g., server.postEventResponse(response), if needed.
         if response.actionIdentifier == "likeAction"{
             self.view.backgroundColor = .green
                   completion(.doNotDismiss)
