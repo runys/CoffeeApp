@@ -8,13 +8,11 @@
 
 import UIKit
 
-// TODO: Explain
 fileprivate let NEARBY: String = "NEARBY"
 fileprivate let OTHERS: String = "OTHERS"
 
 class NearbyCoffeShopsTableViewController: UITableViewController {
 
-    // TODO: Explain
     var coffeeShops: [String: [CoffeeShop]] = [
         NEARBY: [],
         OTHERS: []
@@ -39,12 +37,10 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    // TODO: Explain
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.coffeeShops.count
     }
 
-    // TODO: Explain
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rowsArray: [CoffeeShop]
         
@@ -62,7 +58,6 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         return rowsArray.count
     }
 
-    // TODO: Explain
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 && self.coffeeShops[NEARBY]!.count == 0 {
@@ -85,14 +80,12 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
             
             coffeeShopCell.distanceLabel.text = distanceText
             
-            // TODO: Prepare to download the image
             coffeeShopCell.coffeeShopImageView.image = UIImage(named: coffeeShop.imageURL)
         }
         
         return cell
     }
     
-    // TODO: Explain
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 1:
@@ -104,7 +97,6 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     
-    // TODO: Explain
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "coffeeShopDetailIdentifier" {
             if let coffeeBarDetailVC = segue.destination as? CoffeBarDetailTableViewController {

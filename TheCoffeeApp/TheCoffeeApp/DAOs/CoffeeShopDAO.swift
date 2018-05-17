@@ -75,7 +75,6 @@ class CoffeeShopDAO {
         }).first
     }
     
-    // TODO: Split the dictionary in two keys
     static func getAll(splitedByMinimum distance: Double) -> [String: [CoffeeShop]] {
         var coffeeBars: [String: [CoffeeShop]] = ["NEARBY" : [], "OTHERS" : []]
         

@@ -49,7 +49,7 @@ class LocationServices {
         return Location(latitude: self.userCLLocation.coordinate.latitude, longitude: self.userCLLocation.coordinate.longitude)
     }
     
-    // TODO: Calculate distance between two location in meters
+    // Calculate distance between two location in meters
     func distance(from locationA: Location, to locationB: Location) -> Double {
         let departure: CLLocation = CLLocation(latitude: locationA.latitude, longitude: locationA.longitude)
         let destination: CLLocation = CLLocation(latitude: locationB.latitude, longitude: locationB.longitude)
@@ -59,7 +59,7 @@ class LocationServices {
         return 0.0
     }
     
-    // TODO: Calculate distance between the user postion and a location, in meters
+    // Calculate distance between the user postion and a location, in meters
     func distance(to location: Location) -> Double {
         let destination: CLLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         
