@@ -46,6 +46,39 @@ class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
          - UNNotificationDismissActionIdentifier
          - Custom action identifier
          */
+        
+        let notificationContent = response.notification.request.content
+        let actionIdentifier = response.actionIdentifier
+        
+        print("[LOG] Notification '\(notificationContent.categoryIdentifier)' with action '\(actionIdentifier)'")
+        
+        switch notificationContent.categoryIdentifier {
+        case NotificationCategoryIdentifier.reminder:
+            self.handleReminderAction(actionIdentifier, notificationContent)
+        case NotificationCategoryIdentifier.proximity:
+            break
+        case NotificationCategoryIdentifier.update:
+            break
+        default:
+            print("[LOG] Unknown notification category: '\(notificationContent.categoryIdentifier)'")
+        }
+        
+        
+        
+        completionHandler()
+    }
+    
+    func handleReminderAction(_ actionIdentifier: String, _ notificationContent: UNNotificationContent) {
+        switch actionIdentifier {
+        case NotificationActionIdentifier.didDrinkCoffee,
+             UNNotificationDefaultActionIdentifier:
+            let coffeeID: String = notificationContent.userInfo["coffeeID"] as? String ?? ""
+            let timestamp = Date()
+            
+            DrinkHistoryDAO.addDrinkEntry(coffeeId: coffeeID, timestamp: timestamp, coffeeBar: nil)
+        default:
+            print("[LOG] No coffee was drank that day.")
+        }
     }
 }
 

@@ -37,7 +37,7 @@ class DrinkingHistoryTableViewController: UITableViewController {
         let drinkRecord = self.history[indexPath.row]
         
         let coffeeName = drinkRecord.coffee.name
-        let placeName = drinkRecord.place.name
+        let placeName = drinkRecord.place?.name ?? "---"
         
         let when = "\(drinkRecord.date) at \(drinkRecord.time)"
         

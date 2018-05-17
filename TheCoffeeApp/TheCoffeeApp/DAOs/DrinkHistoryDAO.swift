@@ -39,4 +39,10 @@ class DrinkHistoryDAO {
     static func getHistory() -> [DrinkRecord] {
         return drinkHistoryDatabase
     }
+    
+    static func addDrinkEntry(coffeeId: String, timestamp: Date, coffeeBar: CoffeeShop?) {
+        let coffee = CoffeeDAO.getCoffee(coffeeId)!
+        let newEntry = DrinkRecord(didDrink: true, coffee: coffee, timestamp: timestamp, place: coffeeBar)
+        drinkHistoryDatabase.append(newEntry)
+    }
 }

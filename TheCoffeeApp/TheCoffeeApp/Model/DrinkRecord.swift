@@ -11,7 +11,7 @@ import Foundation
 class DrinkRecord {
     let didDrink: Bool
     let timestamp: Date
-    let place: CoffeeShop
+    let place: CoffeeShop?
     let coffee: Coffee
     
     var date: String {
@@ -28,7 +28,7 @@ class DrinkRecord {
         return dateFormatter.string(from: self.timestamp)
     }
     
-    init(didDrink: Bool, coffee: Coffee, timestamp: Date, place: CoffeeShop) {
+    init(didDrink: Bool, coffee: Coffee, timestamp: Date, place: CoffeeShop?) {
         self.didDrink = didDrink
         self.timestamp = timestamp
         self.place = place
