@@ -22,7 +22,9 @@ class CoffeeRemindersTableViewController: UITableViewController {
         CoffeeRemindersDAO.getAllReminders { (coffeeReminders) in
             self.reminders = coffeeReminders
             
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -40,8 +42,13 @@ class CoffeeRemindersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkReminderIdentifier", for: indexPath)
 
         let reminder = self.reminders[indexPath.row]
+        let coffee = CoffeeDAO.getCoffee(reminder.coffeeID)!
         
-        cell.textLabel?.text = "\(reminder.coffeeName) at \(reminder.hour):\(reminder.minutes)"
+        cell.imageView?.image = UIImage(named: coffee.imageURL)
+        cell.imageView?.layer.cornerRadius = 5
+        cell.imageView?.clipsToBounds = true
+        
+        cell.textLabel?.text = String(format: "%@ at %02d:%02d", reminder.coffeeName, reminder.hour, reminder.minutes)
         
         return cell
     }

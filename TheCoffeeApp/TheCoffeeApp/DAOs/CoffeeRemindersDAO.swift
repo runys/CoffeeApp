@@ -9,7 +9,7 @@
 import Foundation
 import  UserNotifications
 
-typealias CoffeeReminder = (coffeeName: String, hour: Int, minutes: Int)
+typealias CoffeeReminder = (coffeeID: String, coffeeName: String, hour: Int, minutes: Int)
 
 class CoffeeRemindersDAO {
     
@@ -20,9 +20,12 @@ class CoffeeRemindersDAO {
             
             for notification in notificationRequests where notification.content.categoryIdentifier == NotificationCategoryIdentifier.reminder {
                 let coffeeName = notification.content.userInfo["coffeeName"] as? String ?? ""
+                let coffeeID = notification.content.userInfo["coffeeID"] as? String ?? ""
+
                 let trigger = notification.trigger as! UNCalendarNotificationTrigger
                 
-                let coffeReminder: CoffeeReminder = (coffeeName: coffeeName,
+                let coffeReminder: CoffeeReminder = (coffeeID: coffeeID,
+                                                     coffeeName: coffeeName,
                                                      hour: trigger.dateComponents.hour ?? 0,
                                                      minutes: trigger.dateComponents.minute ?? 0)
                 coffeeReminders.append(coffeReminder)

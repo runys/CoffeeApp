@@ -46,9 +46,9 @@ struct ProximityNotificationContent {
     // Identifiers
     let requestUniqueIdentifier: String
     
-    let categoryIdentifier: String = NotificationCategoryIdentifier.reminder
+    let categoryIdentifier: String = NotificationCategoryIdentifier.proximity
     
-    let threadIdentifier: String = NotificationThreadIdentifier.coffeeReminder
+    let threadIdentifier: String = NotificationThreadIdentifier.coffeBarNearby
     
     // User information
     var info = [
