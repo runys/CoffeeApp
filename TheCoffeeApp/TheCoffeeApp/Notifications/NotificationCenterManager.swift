@@ -28,6 +28,9 @@ class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
          3. Call completion handler with .alert .sound .badge
          - If you call with nothing, you supress the notification
          */
+        
+        // Allowing banners to show up in the app.
+        completionHandler([.alert, .sound])
     }
     
     // Called after the user interacted with the notification
@@ -52,6 +55,15 @@ extension NotificationCenterManager {
     // Providing access to the application Notification Center
     private var notificationCenter: UNUserNotificationCenter {
         return UNUserNotificationCenter.current()
+    }
+    
+    func requestAuthorizationForNotifications() {
+        // Request authorization.
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { _, error in
+            if let error = error {
+                fatalError("failed to get authorization for notifications with \(error)")
+            }
+        }
     }
     
     // Get all the current scheduled notifications

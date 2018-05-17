@@ -14,7 +14,7 @@ typealias CoffeeReminder = (coffeeID: String, coffeeName: String, hour: Int, min
 class CoffeeRemindersDAO {
     
     static func getAllReminders(completionHandler: @escaping ([CoffeeReminder]) -> Void) {
-        // TODO:
+        // TODO: Explain
         NotificationCenterManager.shared.getAllNotifications { (notificationRequests) in
             var coffeeReminders: [CoffeeReminder] = []
             
