@@ -27,3 +27,7 @@ struct NotificationThreadIdentifier {
     static let newCoffeeDeal = "newCoffeeDealNotification"
 }
 
+struct NotificationActionIdentifier {
+    static let didDrinkCoffee: String = "drinkCoffee"
+    static let didntDrinkCoffee: String = "dontDrinkCofee"
+}

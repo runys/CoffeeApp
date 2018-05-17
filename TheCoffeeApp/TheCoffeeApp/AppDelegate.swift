@@ -133,12 +133,12 @@ extension AppDelegate {
     func registerCoffeeRemindersNotificationActions() {
         // 1.
         let drinkCoffee =
-            UNNotificationAction(identifier: "drinkCoffee",
-                                 title: "",
+            UNNotificationAction(identifier: NotificationActionIdentifier.didDrinkCoffee,
+                                 title: "Yes, I'm gonna drink it",
                                  options: [.authenticationRequired])
         let dontDrinkCoffee =
-            UNNotificationAction(identifier: "dontDrinkCofee",
-                                 title: "",
+            UNNotificationAction(identifier: NotificationActionIdentifier.didntDrinkCoffee,
+                                 title: "No, I won't drink one",
                                  options: [.authenticationRequired])
         
         // 2.
