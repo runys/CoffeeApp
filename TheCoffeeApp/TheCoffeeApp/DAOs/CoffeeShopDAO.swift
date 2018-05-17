@@ -19,8 +19,8 @@ class CoffeeShopDAO {
                    imageURL: "coffeebar-placeholder-1",
                    description: "That's a very good coffe bar nearby the Academy. Nunzia is a sweetheart.",
                    coffees: [
-                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
-                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 1, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 1, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9),
                     (coffee: CoffeeDAO.getCoffee("004")!, rating: 3, price: 1.5)
             ]),
         CoffeeShop(id: "002",
@@ -29,9 +29,9 @@ class CoffeeShopDAO {
                    imageURL: "coffeebar-placeholder-2",
                    description: "A random placeholder coffee bar to increase the amount of entries in the database.",
                    coffees: [
-                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
-                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 1, price: 0.9),
-                    (coffee: CoffeeDAO.getCoffee("002")!, rating: 3, price: 1.5)
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 3, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9),
+                    (coffee: CoffeeDAO.getCoffee("002")!, rating: 1, price: 1.5)
             ]),
         CoffeeShop(id: "003",
                    name: "Mexico",
@@ -50,8 +50,8 @@ class CoffeeShopDAO {
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 0.9),
                     (coffee: CoffeeDAO.getCoffee("009")!, rating: 1, price: 1.5),
-                    (coffee: CoffeeDAO.getCoffee("006")!, rating: 2, price: 1.0),
-                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 0.9)
+                    (coffee: CoffeeDAO.getCoffee("006")!, rating: 4, price: 1.0),
+                    (coffee: CoffeeDAO.getCoffee("007")!, rating: 3, price: 0.9)
             ]),
         CoffeeShop(id: "005",
                    name: "Gran Caffè Gambrinus",
@@ -61,7 +61,7 @@ class CoffeeShopDAO {
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 1.5),
                     (coffee: CoffeeDAO.getCoffee("009")!, rating: 1, price: 1.5),
-                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 2, price: 1.5)
+                    (coffee: CoffeeDAO.getCoffee("001")!, rating: 3, price: 1.5)
             ])
     ]
     
@@ -90,4 +90,27 @@ class CoffeeShopDAO {
         return coffeeBars
     }
     
+    static func setUpLocationNotifications() {
+        for coffeeBar in coffeeShops {
+            registerProximityNotification(for: coffeeBar)
+        }
+    }
+    
+    static func registerProximityNotification(for coffeeBar: CoffeeShop) {
+        let locationIdentifier = coffeeBar.locationIdentifier
+        let requestIdentifier = "ProximityNotificationTo\(coffeeBar.name)"
+        
+        let notificationSettings: ProximityNotificationContent
+            = ProximityNotificationContent(title: "A coffee bar is near!",
+                                           bodyText: "Why don't you stop by \(coffeeBar.name) and drink a \(coffeeBar.topThreeCoffees[0].name)?",
+                                           latitude: coffeeBar.location.latitude,
+                                           longitude: coffeeBar.location.longitude,
+                                           radiusInMeters: 100,
+                                           locationIdentifier: locationIdentifier,
+                                           requestUniqueIdentifier: requestIdentifier,
+                                           info: ["coffeeBarName": coffeeBar.name, "coffeeBarID": coffeeBar.id])
+        
+        NotificationCenterManager.shared
+            .registerProximityNotification(notificationContent: notificationSettings)
+    }
 }

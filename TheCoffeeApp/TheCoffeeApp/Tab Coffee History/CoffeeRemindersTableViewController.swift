@@ -49,6 +49,11 @@ class CoffeeRemindersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let reminderToDelete = self.reminders[indexPath.row]
+            
+            CoffeeRemindersDAO.deleteReminder(reminderToDelete)
+            self.reminders.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

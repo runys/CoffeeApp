@@ -58,4 +58,8 @@ class CoffeeShop{
         let kmDistance = LocationServices.shared.distance(to: self.location) / 1000
         return kmDistance
     }
+    
+    var locationIdentifier: String {
+        return "\(self.name)\(self.location.latitude)\(self.location.longitude)"
+    }
 }

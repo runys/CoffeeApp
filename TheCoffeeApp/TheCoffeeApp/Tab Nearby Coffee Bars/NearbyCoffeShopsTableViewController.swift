@@ -25,8 +25,12 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         
         // 1. Get the information from the DAO to populate the local array
         self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
+        print("[LOG] Coffee bars around: \(self.coffeeShops)")
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // 2. Sets up all the proximity notifications
+        CoffeeShopDAO.setUpLocationNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,36 +41,42 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
 
     // TODO: Explain
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // 1.
         return self.coffeeShops.count
     }
 
     // TODO: Explain
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 1.
         var rowsArray: [CoffeeShop]
         
-        // 2.
         switch section {
         case 0:
             rowsArray = self.coffeeShops[NEARBY] ?? []
+            // Empty State
+            if rowsArray.count == 0 { return 1 }
         case 1:
             rowsArray = self.coffeeShops[OTHERS] ?? []
         default:
             rowsArray = []
         }
-        // 3.
+
         return rowsArray.count
     }
 
     // TODO: Explain
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 && self.coffeeShops[NEARBY]!.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "emptyStateCell", for: indexPath)
+            
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "coffeShopIdentifier", for: indexPath)
         
         let coffeeShopForCell = self.coffeeShop(for: indexPath)
         
         if let coffeeShopCell = cell as? NearbyCoffeeShopTableViewCell,
-           let coffeeShop = coffeeShopForCell{
+           let coffeeShop = coffeeShopForCell {
             
             coffeeShopCell.nameLabel.text = coffeeShop.name
             coffeeShopCell.topCoffeLabel.text = "☆ Coffee \(coffeeShop.topThreeCoffees[0].name)"
@@ -109,10 +119,9 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
-        print("You are back")
+        print("[LOG] Back from coffee bar details.")
     }
 
-    //
     func coffeeShop(for indexPath: IndexPath) -> CoffeeShop? {
         let coffeeShop: CoffeeShop
         let coffeeShops: [CoffeeShop]

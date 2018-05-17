@@ -34,22 +34,24 @@ class CoffeeRemindersDAO {
     
     static func createReminder(hour: Int, minute: Int, coffeeID: String) {
         let coffee = CoffeeDAO.getCoffee(coffeeID)!
-        
         let notificationIdentifier = "\(coffee.name)\(hour)\(minute)"
         
-        let notificationTitle = "Coffee time!"
-        let notificationBody = "It is time to drink a \(coffee.name)."
+        let notificationSettings =
+            CoffeeReminderNotificationContent(title: "Coffee time!",
+                                              bodyText: "It is time to drink a \(coffee.name).",
+                                              hour: hour,
+                                              minutes: minute,
+                                              requestUniqueIdentifier: notificationIdentifier,
+                                              info: ["coffeeName": coffee.name, "coffeeID": coffee.id])
         
         NotificationCenterManager.shared
-            .createReminderNotificationWith(title: notificationTitle, bodyText: notificationBody, hour: hour, minutes: minute, identifier: notificationIdentifier, info: ["coffeeName": coffee.name])
+            .createReminderNotificationWith(notificationContent: notificationSettings)
         
         print("[LOG] Reminder created: \(hour):\(minute) for \(coffee.name)")
     }
     
-    static func deleteReminder(hour: Int, minute: Int, coffeeID: String) {
-        let coffee = CoffeeDAO.getCoffee(coffeeID)!
-        
-        let notificationIdentifier = "\(coffee.name)\(hour)\(minute)"
+    static func deleteReminder(_ reminder: CoffeeReminder) {
+        let notificationIdentifier = "\(reminder.coffeeName)\(reminder.hour)\(reminder.minutes)"
         
         NotificationCenterManager.shared.removeNotification(with: notificationIdentifier)
     }

@@ -64,9 +64,10 @@ extension NotificationCenterManager {
     
     // Remove a schedule notification
     func removeNotification(with identifier: String) {
-        // 1.
         self.notificationCenter
             .removePendingNotificationRequests(withIdentifiers: [identifier])
+        
+        print("[LOG] Removed notification '\(identifier)'")
     }
     
     // Clear the notification history and all the schedule notifications
@@ -96,7 +97,7 @@ extension NotificationCenterManager {
             if let error = error {
                 print("[LOG] Not possible to schedule the notification due to error: \(error.localizedDescription)")
             } else {
-                print("[LOG] Notification schedule successfully")
+                print("[LOG] Notification \(requestIdentifier) schedule successfully")
             }
         }
     }
@@ -126,16 +127,18 @@ extension NotificationCenterManager {
         return calendarTrigger
     }
     
-    private func locationTrigger(latitude: Double, longitude: Double, radius: Double) -> UNLocationNotificationTrigger {
-        // 1.
+    private func createLocationTrigger(latitude: Double, longitude: Double, radius: Double, regionIdentifier: String) -> UNLocationNotificationTrigger {
+        // 1. The location of the place you want to be notified about
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        // 2.
-        let region = CLCircularRegion(center: center, radius: radius, identifier: "nameOfTheRegion")
         
-        // 3.
+        // 2. Radius is the distance in meters from the region
+        let region = CLCircularRegion(center: center, radius: radius, identifier: regionIdentifier)
+        
+        // 3. Set up when you want to be notifed
         region.notifyOnEntry = true
         region.notifyOnExit = false
         
+        // Create the trigger
         let trigger =
             UNLocationNotificationTrigger(region: region, repeats: true)
         
@@ -146,31 +149,55 @@ extension NotificationCenterManager {
 // - MARK: External API
 extension NotificationCenterManager {
     
-    func createReminderNotificationWith(title: String, bodyText: String, hour: Int, minutes: Int, identifier: String, info: [AnyHashable: Any]?) {
-        // 1. Set up the content
+    func createReminderNotificationWith(notificationContent: CoffeeReminderNotificationContent) {
         let content = UNMutableNotificationContent()
         
-        content.title = title
-        // content.subtitle = ""
-        content.body = bodyText
-        // - UNNotificationAttachment: images, videos, audio
-        // content.attachments = []
-        // - Sound of the notification
+        // 1. Set up th notification content
+        content.title = notificationContent.title
+        content.body = notificationContent.bodyText
+        
+        content.userInfo = notificationContent.info
+        
+        content.categoryIdentifier = notificationContent.categoryIdentifier
+        content.threadIdentifier = notificationContent.threadIdentifier
+        
+        // Default properties
         content.sound = UNNotificationSound.default()
-        // - The number in the red circle on your app icon
         content.badge = 1
         
-        content.userInfo = info ?? [:]
-        
-        // - Sets up the custom actions or custom interface
-        content.categoryIdentifier = NotificationCategoryIdentifier.reminder
-        // - Sets up the grouping thread in the notification center
-        content.threadIdentifier = NotificationThreadIdentifier.coffeeReminder
-        
         // 2. Get the trigger
-        let trigger = self.createCalendarTrigger(for: hour, minutes: minutes, repeating: true)
+        let trigger =
+            self.createCalendarTrigger(for: notificationContent.hour,
+                                       minutes: notificationContent.minutes,
+                                       repeating: notificationContent.repeating)
         
         // 3. Schedule the notification
-        self.scheduleNotification(requestIdentifier: identifier, content: content, trigger: trigger)
+        self.scheduleNotification(requestIdentifier: notificationContent.requestUniqueIdentifier,
+                                  content: content,
+                                  trigger: trigger)
+    }
+    
+    func registerProximityNotification(notificationContent: ProximityNotificationContent) {
+        let content = UNMutableNotificationContent()
+        
+        // 1. Set up th notification content
+        content.title = notificationContent.title
+        content.body = notificationContent.bodyText
+        
+        content.userInfo = notificationContent.info
+        
+        content.categoryIdentifier = notificationContent.categoryIdentifier
+        content.threadIdentifier = notificationContent.threadIdentifier
+        
+        // Default properties
+        content.sound = UNNotificationSound.default()
+        content.badge = 1
+        
+        // 2. Get the trigger
+        let trigger =
+            self.createLocationTrigger(latitude: notificationContent.latitude, longitude: notificationContent.longitude, radius: notificationContent.radiusInMeters, regionIdentifier: notificationContent.locationIdentifier)
+        
+        // 3. Schedule the notification
+        self.scheduleNotification(requestIdentifier: notificationContent.requestUniqueIdentifier, content: content, trigger: trigger)
     }
 }
