@@ -63,8 +63,6 @@ class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
             print("[LOG] Unknown notification category: '\(notificationContent.categoryIdentifier)'")
         }
         
-        
-        
         completionHandler()
     }
     
@@ -125,7 +123,7 @@ extension NotificationCenterManager {
             .removeAllPendingNotificationRequests()
     }
     
-    // 3. Re-schedule a notification
+    // Re-schedule a notification
     func rescheduleNotification(with identifier: String, to date: Date) {
         // 1. Get a copy of the notification
         // 2. Remove the notification
@@ -191,7 +189,7 @@ extension NotificationCenterManager {
     }
 }
 
-// - MARK: External API
+// - MARK: Custom API
 extension NotificationCenterManager {
     
     func createReminderNotificationWith(notificationContent: CoffeeReminderNotificationContent) {

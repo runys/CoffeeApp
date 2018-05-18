@@ -18,6 +18,9 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         OTHERS: []
     ]
     
+    // Pull to refresh UI control
+    private let refreshNearbyCoffeeBarsControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,10 +32,26 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         
         // 2. Sets up all the proximity notifications
         CoffeeShopDAO.setUpLocationNotifications()
+        
+        // 3. Add the pull to refresh action
+        self.refreshNearbyCoffeeBarsControl.tintColor = ColorPallete.darkBackground
+        self.tableView.refreshControl = self.refreshNearbyCoffeeBarsControl
+        self.refreshNearbyCoffeeBarsControl.addTarget(self, action: #selector(reloadCoffeeBarData), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.reloadCoffeeBarData()
+    }
+    
+    @objc func reloadCoffeeBarData() {
+        self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
         self.tableView.reloadData()
+        
+        if self.refreshNearbyCoffeeBarsControl.isRefreshing {
+            DispatchQueue.main.async {
+                self.refreshNearbyCoffeeBarsControl.endRefreshing()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -114,6 +133,8 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         print("[LOG] Back from coffee bar details.")
     }
 
+    // MARK: - Helper functions
+    
     func coffeeShop(for indexPath: IndexPath) -> CoffeeShop? {
         let coffeeShop: CoffeeShop
         let coffeeShops: [CoffeeShop]

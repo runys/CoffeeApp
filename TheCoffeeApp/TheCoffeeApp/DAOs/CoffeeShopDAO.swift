@@ -57,7 +57,7 @@ class CoffeeShopDAO {
                    name: "Gran Caffè Gambrinus",
                    location: Location(latitude: 40.8462759, longitude: 14.2515021),
                    imageURL: "coffeebar-placeholder-5",
-                   description: "",
+                   description: "A well known coffee bar in the city of Napoli. Rich people loves this place.",
                    coffees: [
                     (coffee: CoffeeDAO.getCoffee("007")!, rating: 2, price: 1.5),
                     (coffee: CoffeeDAO.getCoffee("009")!, rating: 1, price: 1.5),
