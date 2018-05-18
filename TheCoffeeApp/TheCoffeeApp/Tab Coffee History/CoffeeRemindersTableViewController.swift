@@ -19,7 +19,7 @@ class CoffeeRemindersTableViewController: UITableViewController {
     }
     
     func getReminders() {
-        CoffeeRemindersDAO.getAllReminders { (coffeeReminders) in
+        APIManager.shared.getAllReminders { (coffeeReminders) in
             self.reminders = coffeeReminders
             
             DispatchQueue.main.async {
@@ -55,7 +55,7 @@ class CoffeeRemindersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkReminderIdentifier", for: indexPath)
 
         let reminder = self.reminders[indexPath.row]
-        let coffee = CoffeeDAO.getCoffee(reminder.coffeeID)!
+        let coffee = APIManager.shared.getCoffee(reminder.coffeeID)!
         
         cell.imageView?.image = UIImage(named: coffee.imageURL)
         cell.imageView?.layer.cornerRadius = 5
@@ -72,7 +72,7 @@ class CoffeeRemindersTableViewController: UITableViewController {
                 // Delete the row from the data source
                 let reminderToDelete = self.reminders[indexPath.row]
                 
-                CoffeeRemindersDAO.deleteReminder(reminderToDelete)
+                APIManager.shared.deleteReminder(reminderToDelete)
                 self.reminders.remove(at: indexPath.row)
                 
                 // Empty State

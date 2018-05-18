@@ -22,7 +22,7 @@ class NewReminderViewController: UIViewController {
         self.coffeePickerView.dataSource = self
         self.coffeePickerView.delegate = self
         
-        self.coffees = CoffeeDAO.getAllCoffees()
+        self.coffees = APIManager.shared.getAllCoffees()
     }
     
     var selectedHour: Int {
@@ -47,11 +47,11 @@ class NewReminderViewController: UIViewController {
         let selectedRow = self.coffeePickerView.selectedRow(inComponent: 0)
         let coffeeID = self.coffees[selectedRow].id
         
-        return CoffeeDAO.getCoffee(coffeeID)!
+        return APIManager.shared.getCoffee(coffeeID)!
     }
     
     @IBAction func createCoffeeReminder(_ sender: Any) {
-        CoffeeRemindersDAO.createReminder(hour: selectedHour, minute: selectedMinute, coffeeID: selectedCoffee.id)
+        APIManager.shared.createReminder(hour: selectedHour, minute: selectedMinute, coffeeID: selectedCoffee.id)
         
         self.performSegue(withIdentifier: "doneSegueIdentifier", sender: nil)
         

@@ -57,8 +57,6 @@ class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
             self.handleReminderAction(actionIdentifier, notificationContent)
         case NotificationCategoryIdentifier.proximity:
             break
-        case NotificationCategoryIdentifier.update:
-            break
         default:
             print("[LOG] Unknown notification category: '\(notificationContent.categoryIdentifier)'")
         }
@@ -74,8 +72,7 @@ class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
              UNNotificationDefaultActionIdentifier:
             let coffeeID: String = notificationContent.userInfo["coffeeID"] as? String ?? ""
             let timestamp = Date()
-            
-            DrinkHistoryDAO.addDrinkEntry(coffeeId: coffeeID, timestamp: timestamp, coffeeBar: nil)
+            APIManager.shared.addDrinkEntry(coffeeId: coffeeID, timestamp: timestamp, coffeeBar: nil)
         default:
             print("[LOG] No coffee was drank that day.")
         }

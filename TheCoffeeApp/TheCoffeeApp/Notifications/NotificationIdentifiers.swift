@@ -9,25 +9,22 @@
 import Foundation
 
 // Content agnostic
-struct NotificationCategoryIdentifier {
+public struct NotificationCategoryIdentifier {
     // Reminds you of something
     static let reminder: String = "reminderNotification"
     
     // Notify when you are nearby somewhere
     static let proximity: String = "proximityNotification"
-    
-    // Updates the user and the data
-    static let update: String = "updateNotification"
 }
 
 // Content specific
 struct NotificationThreadIdentifier {
     static let coffeeReminder: String = "coffeeReminderNotification"
     static let coffeBarNearby: String = "coffeeBarNearbyNotification"
-    static let newCoffeeDeal = "newCoffeeDealNotification"
+    static let update: String = "updateNotification"
 }
 
-struct NotificationActionIdentifier {
+public struct NotificationActionIdentifier {
     static let didDrinkCoffee: String = "drinkCoffee"
     static let didntDrinkCoffee: String = "dontDrinkCofee"
 }

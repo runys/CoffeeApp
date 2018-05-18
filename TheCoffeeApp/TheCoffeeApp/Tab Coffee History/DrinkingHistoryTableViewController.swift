@@ -15,7 +15,7 @@ class DrinkingHistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.history = DrinkHistoryDAO.getHistory()
+        self.history = APIManager.shared.getHistory()
         self.history.sort { $0.timestamp > $1.timestamp }
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -24,7 +24,7 @@ class DrinkingHistoryTableViewController: UITableViewController {
     }
     
     @objc func reloadData() {
-        self.history = DrinkHistoryDAO.getHistory()
+        self.history = APIManager.shared.getHistory()
         self.tableView.reloadData()
     }
 

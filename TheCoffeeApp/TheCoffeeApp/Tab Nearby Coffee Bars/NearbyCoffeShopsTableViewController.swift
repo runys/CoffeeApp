@@ -22,13 +22,13 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // 1. Get the information from the DAO to populate the local array
-        self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
+        self.coffeeShops = APIManager.shared.getAll(splitedByMinimum: 100)
         print("[LOG] Coffee bars around: \(self.coffeeShops)")
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // 2. Sets up all the proximity notifications
-        CoffeeShopDAO.setUpLocationNotifications()
+        APIManager.shared.setUpLocationNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {

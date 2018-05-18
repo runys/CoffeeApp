@@ -23,7 +23,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         super.viewDidLoad()
         // Do any required interface initialization here.
         let  size  = view.bounds.size
-        preferredContentSize = CGSize(width: size.width, height: size.height/8)
+        preferredContentSize = CGSize(width: size.width, height: 94)
     }
     
     func didReceive(_ notification: UNNotification) {
@@ -44,6 +44,9 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
             let coffeShopName = content.userInfo["coffeShopName"] as? String,
             let discountedPrice = content.userInfo["discountedPrice"] as? String,
             let fullPrice = content.userInfo["fullPrice"] as? String {
+            
+        // Create Custom Actions
+        registerCoffeeDealNotificationActions()
         
         // Set the labels of the long-look notification
         self.coffeName.text = coffeName
@@ -70,6 +73,39 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     
 
+}
+
+extension NotificationViewController {
+    func registerCoffeeDealNotificationActions() {
+        // 1.
+        let likeAction =
+            UNNotificationAction(identifier: "likeAction",
+                                 title: "Like",
+                                 options: [.authenticationRequired, .foreground])
+        
+        let dislikeAction =
+            UNNotificationAction(identifier: "dislikeAction",
+                                 title: "Dislike",
+                                 options: [.authenticationRequired, .foreground])
+        
+        let commentAction =
+            UNTextInputNotificationAction(identifier: "comment-action",
+                                          title: "Comment",
+                                          options: [.authenticationRequired, .foreground],
+                                          textInputButtonTitle: "Post",
+                                          textInputPlaceholder: "Comment")
+        
+        // 2.
+        let dealCategory =
+            UNNotificationCategory(identifier: "newCoffeeDealNotification",
+                                   actions: [likeAction,dislikeAction, commentAction],
+                                   intentIdentifiers: [],
+                                   options: [])
+        
+        // 3.
+        UNUserNotificationCenter.current()
+            .setNotificationCategories([dealCategory])
+    }
 }
 
 

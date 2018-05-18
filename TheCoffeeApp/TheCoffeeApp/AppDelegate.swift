@@ -30,14 +30,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Register with APNs
         registerForPushNotifications(application)
-        
-        // Set up notification actions.
-        self.registerCoffeeDealNotificationActions()
+
         self.registerCoffeeRemindersNotificationActions()
         
         // Set up the app color palette into Navigation and Tab bars
         self.setUpColorPalette()
         
+        // Manage the case the app is launched from notification
+        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+            // Code the desired actions
+            let aps = notification["aps"] as! [String: AnyObject]
+            if aps["content-available"] as? Int == 1 {
+                if aps["category"] as? String == "newCoffeeTipNotification" {
+                    _ =  APIManager.shared.makeTip(notification)
+                } else if aps["category"] as? String == "newCoffeeDealNotification" {
+                    _ =  APIManager.shared.makeDeal(notification)
+                    (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
+                }
+            }
+        }
         return true
     }
     
@@ -63,10 +74,10 @@ extension AppDelegate {
         if let userInfo = userInfo as? [String : AnyObject] {
             let aps = userInfo["aps"] as! [String: AnyObject]
             if aps["content-available"] as? Int == 1 {
-                if aps["category"] as? String == "tipCategory" {
-                    _ =  TipDAO.makeTip(userInfo)
-                } else if aps["category"] as? String == "dealCategory" {
-                    _ =  DealDAO.makeDeal(userInfo)
+                if aps["category"] as? String == "newCoffeeTipNotification" {
+                    _ =  APIManager.shared.makeTip(userInfo)
+                } else if aps["category"] as? String == "newCoffeeDealNotification" {
+                    _ =  APIManager.shared.makeDeal(userInfo)
                     (window?.rootViewController as? UITabBarController)?.selectedIndex = 2
                 }
                 completionHandler(.newData)
@@ -97,38 +108,6 @@ extension AppDelegate {
 
 // - MARK: Register notification actions
 extension AppDelegate {
-    // TODO: Explain what it is
-    func registerCoffeeDealNotificationActions() {
-        // 1.
-        let likeAction =
-            UNNotificationAction(identifier: "likeAction",
-                                 title: "Like",
-                                 options: [.authenticationRequired, .foreground])
-        
-        let dislikeAction =
-            UNNotificationAction(identifier: "dislikeAction",
-                                 title: "Dislike",
-                                 options: [.authenticationRequired, .foreground])
-        
-        let commentAction =
-            UNTextInputNotificationAction(identifier: "comment-action",
-                                          title: "Comment",
-                                          options: [.authenticationRequired, .foreground],
-                                          textInputButtonTitle: "Post",
-                                          textInputPlaceholder: "Comment")
-        
-        // 2.
-        let dealCategory =
-            UNNotificationCategory(identifier: "dealCategory",
-                                   actions: [likeAction,dislikeAction, commentAction],
-                                   intentIdentifiers: [],
-                                   options: [])
-        
-        // 3.
-        UNUserNotificationCenter.current()
-            .setNotificationCategories([dealCategory])
-    }
-    
     // TODO: Explain what it is
     func registerCoffeeRemindersNotificationActions() {
         // 1.

@@ -18,7 +18,7 @@ class TipsAndTricksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tips = TipDAO.getAllTips()
+        self.tips = APIManager.shared.getAllTips()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -33,7 +33,7 @@ class TipsAndTricksTableViewController: UITableViewController {
     @objc func refreshData(){
         //
         DispatchQueue.main.async {
-            self.tips = TipDAO.getAllTips()
+            self.tips = APIManager.shared.getAllTips()
             self.tableView.beginUpdates()
             self.tableView.insertRows(at: [IndexPath(row: self.tips.count-1, section: 0)], with: .automatic)
             self.tableView.endUpdates()

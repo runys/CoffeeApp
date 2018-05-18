@@ -17,19 +17,17 @@ class CoffeeDealsTableViewController: UITableViewController {
  @objc func refreshData(){
 //
         DispatchQueue.main.async {
-            self.coffeeDeals = DealDAO.getAllDeals()
+            self.coffeeDeals = APIManager.shared.getAllDeals()
             self.tableView.beginUpdates()
             self.tableView.insertRows(at: [IndexPath(row: self.coffeeDeals.count-1, section: 0)], with: .automatic)
             self.tableView.endUpdates()
-
-//                self.tableView.reloadData()
     }
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.coffeeDeals = DealDAO.getAllDeals()
+        self.coffeeDeals = APIManager.shared.getAllDeals()
         self.tableView.estimatedRowHeight = 166
         self.navigationController?.navigationBar.prefersLargeTitles = true
         

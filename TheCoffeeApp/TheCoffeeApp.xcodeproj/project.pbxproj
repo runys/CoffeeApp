@@ -36,11 +36,13 @@
 		27DEDB0F2085F727004E310C /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB0E2085F727004E310C /* Tip.swift */; };
 		27DEDB112085F73F004E310C /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB102085F73F004E310C /* Deal.swift */; };
 		27DEDB132085F746004E310C /* DrinkRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB122085F746004E310C /* DrinkRecord.swift */; };
-		27DEDB1620863137004E310C /* CoffeeShopDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1520863137004E310C /* CoffeeShopDAO.swift */; };
 		27DEDB182086313F004E310C /* CoffeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB172086313F004E310C /* CoffeeDAO.swift */; };
 		27DEDB1A20863152004E310C /* TipDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1920863152004E310C /* TipDAO.swift */; };
 		27DEDB1C2086315B004E310C /* DealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1B2086315B004E310C /* DealDAO.swift */; };
 		27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */; };
+		5C5B5F4520AEBF5D00EE5138 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B5F4420AEBF5D00EE5138 /* APIManager.swift */; };
+		5C5B5F4720AEC05A00EE5138 /* NotificationDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B5F4620AEC05A00EE5138 /* NotificationDatabase.swift */; };
+		5C5B5F4920AEC5D900EE5138 /* CoffeeShopDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B5F4820AEC5D900EE5138 /* CoffeeShopDAO.swift */; };
 		7D41D61220A3210400FED6F0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41D61120A3210400FED6F0 /* NotificationService.swift */; };
 		7D41D61620A3210400FED6F0 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D41D60F20A3210400FED6F0 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7DC23BB920A45D1100D9A6CD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC23BB820A45D1100D9A6CD /* UserNotifications.framework */; };
@@ -114,11 +116,13 @@
 		27DEDB0E2085F727004E310C /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		27DEDB102085F73F004E310C /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		27DEDB122085F746004E310C /* DrinkRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecord.swift; sourceTree = "<group>"; };
-		27DEDB1520863137004E310C /* CoffeeShopDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDAO.swift; sourceTree = "<group>"; };
 		27DEDB172086313F004E310C /* CoffeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDAO.swift; sourceTree = "<group>"; };
 		27DEDB1920863152004E310C /* TipDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipDAO.swift; sourceTree = "<group>"; };
 		27DEDB1B2086315B004E310C /* DealDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDAO.swift; sourceTree = "<group>"; };
 		27DEDB1D20863164004E310C /* DrinkHistoryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkHistoryDAO.swift; sourceTree = "<group>"; };
+		5C5B5F4420AEBF5D00EE5138 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		5C5B5F4620AEC05A00EE5138 /* NotificationDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDatabase.swift; sourceTree = "<group>"; };
+		5C5B5F4820AEC5D900EE5138 /* CoffeeShopDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeShopDAO.swift; sourceTree = "<group>"; };
 		7D41D60F20A3210400FED6F0 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D41D61120A3210400FED6F0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7D41D61320A3210400FED6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		27DEDAE62084E643004E310C /* TheCoffeeApp */ = {
 			isa = PBXGroup;
 			children = (
+				5C5B5F4320AEBF0E00EE5138 /* APIManager */,
 				27DEDAE72084E643004E310C /* AppDelegate.swift */,
 				27DEDAEB2084E643004E310C /* Main.storyboard */,
 				2789C2ED20AC84B9006E5CC7 /* Notifications */,
@@ -284,7 +289,7 @@
 		27DEDB142086311C004E310C /* DAOs */ = {
 			isa = PBXGroup;
 			children = (
-				27DEDB1520863137004E310C /* CoffeeShopDAO.swift */,
+				5C5B5F4820AEC5D900EE5138 /* CoffeeShopDAO.swift */,
 				27DEDB172086313F004E310C /* CoffeeDAO.swift */,
 				27DEDB1920863152004E310C /* TipDAO.swift */,
 				27DEDB1B2086315B004E310C /* DealDAO.swift */,
@@ -292,6 +297,15 @@
 				279BC03E20A9E77B00854A32 /* CoffeeRemindersDAO.swift */,
 			);
 			path = DAOs;
+			sourceTree = "<group>";
+		};
+		5C5B5F4320AEBF0E00EE5138 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				5C5B5F4620AEC05A00EE5138 /* NotificationDatabase.swift */,
+				5C5B5F4420AEBF5D00EE5138 /* APIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		7D41D61020A3210400FED6F0 /* NotificationService */ = {
@@ -467,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5B5F4520AEBF5D00EE5138 /* APIManager.swift in Sources */,
 				27BAC0182086518F00962876 /* NearbyCoffeeShopTableViewCell.swift in Sources */,
 				27DEDB0D2085F720004E310C /* CoffeeShop.swift in Sources */,
 				27DEDB042085F2B7004E310C /* DrinkingHistoryTableViewController.swift in Sources */,
@@ -485,11 +500,11 @@
 				27DEDB1E20863164004E310C /* DrinkHistoryDAO.swift in Sources */,
 				27D4FAC5208E1DDA0077FAF6 /* TextTipTableViewCell.swift in Sources */,
 				27DEDAFE2085F276004E310C /* NearbyCoffeShopsTableViewController.swift in Sources */,
+				5C5B5F4720AEC05A00EE5138 /* NotificationDatabase.swift in Sources */,
 				27DEDB022085F294004E310C /* CoffeeDealsTableViewController.swift in Sources */,
 				279BC03D20A9E46300854A32 /* NotificationCenterManager.swift in Sources */,
 				27DEDB002085F286004E310C /* TipsAndTricksTableViewController.swift in Sources */,
 				27DEDB0F2085F727004E310C /* Tip.swift in Sources */,
-				27DEDB1620863137004E310C /* CoffeeShopDAO.swift in Sources */,
 				27DEDB062085F2CD004E310C /* CoffeeRemindersTableViewController.swift in Sources */,
 				279BC04120A9E7FF00854A32 /* NewReminderViewController.swift in Sources */,
 				277545172099E3EB006BB45F /* CoffeBarDetailTableViewController.swift in Sources */,
@@ -497,6 +512,7 @@
 				27D4FAC9208E37190077FAF6 /* CardView.swift in Sources */,
 				27DEDB0B2085F718004E310C /* Coffee.swift in Sources */,
 				2789C2F320AD70E8006E5CC7 /* NotificationTypes.swift in Sources */,
+				5C5B5F4920AEC5D900EE5138 /* CoffeeShopDAO.swift in Sources */,
 				27739F5A20A1AD520054BDD4 /* DrinkHistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
