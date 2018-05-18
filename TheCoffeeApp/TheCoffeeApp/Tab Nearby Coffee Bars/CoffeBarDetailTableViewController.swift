@@ -37,6 +37,10 @@ class CoffeBarDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var closeButton: UIButton!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
