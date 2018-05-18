@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Setting up the class that handles the notifications
+        // Setting up the class that will handle all the notifications
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = NotificationCenterManager.shared
         
@@ -52,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //
+    // If you want to be able to receive Push Notifications you must
+    //  register your application for it.
     func registerForPushNotifications(_ application: UIApplication) {
         application.registerForRemoteNotifications()
     }
@@ -60,13 +61,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-// - MARK: Handling remote notifications
+// MARK: - Handling remote notifications
 extension AppDelegate {
     
     // Handle remote notification registration.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
         // Forward the token to your provider, using a custom method.
         self.forwardTokenToServer(deviceToken: deviceToken)
+    }
+    
+    // TODO: Explain what it is
+    func forwardTokenToServer(deviceToken: Data){
+        // Convert token to string.
+        let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
+        // Log the token string.
+        print("APNs device token - \(deviceTokenString)")
     }
     
     // TODO: Explain what it is
@@ -86,14 +95,6 @@ extension AppDelegate {
     }
     
     // TODO: Explain what it is
-    func forwardTokenToServer(deviceToken: Data){
-        // Convert token to string.
-        let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
-        // Log the token string.
-        print("APNs device token - \(deviceTokenString)")
-    }
-    
-    // TODO: Explain what it is
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         // The token is not currently available.
         print("Remote notification support is unavailable due to error: \(error.localizedDescription)")
@@ -106,11 +107,11 @@ extension AppDelegate {
     }
 }
 
-// - MARK: Register notification actions
+// MARK: - Register notification actions
 extension AppDelegate {
     // TODO: Explain what it is
     func registerCoffeeRemindersNotificationActions() {
-        // 1.
+        // 1. Create the actions
         let drinkCoffee =
             UNNotificationAction(identifier: NotificationActionIdentifier.didDrinkCoffee,
                                  title: "Yes, I'm gonna drink it",
@@ -120,19 +121,19 @@ extension AppDelegate {
                                  title: "No, I won't drink one",
                                  options: [.authenticationRequired])
         
-        // 2.
+        // 2. Create the category associated with the actions
         let reminderCategory =
             UNNotificationCategory(identifier: NotificationCategoryIdentifier.reminder,
                                    actions: [drinkCoffee, dontDrinkCoffee],
                                    intentIdentifiers: [],
                                    options: [])
-        // 3.
+        // 3. Register the category in the Notification Center
         UNUserNotificationCenter.current()
             .setNotificationCategories([reminderCategory])
     }
 }
 
-// - MARK: Custom methods
+// MARK: - Custom methods
 extension AppDelegate {
     
     private func setUpColorPalette() {
