@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenterManager.shared.requestAuthorizationForNotifications()
         
         // Register with APNs
-        registerForPushNotifications(application)
+        self.registerForPushNotifications(application)
 
         self.registerCoffeeRemindersNotificationActions()
         

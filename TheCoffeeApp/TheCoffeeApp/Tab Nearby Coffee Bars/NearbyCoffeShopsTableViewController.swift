@@ -39,7 +39,7 @@ class NearbyCoffeShopsTableViewController: UITableViewController {
     }
     
     @objc func reloadCoffeeBarData() {
-        self.coffeeShops = CoffeeShopDAO.getAll(splitedByMinimum: 100)
+        self.coffeeShops = APIManager.shared.getAll(splitedByMinimum: 100)
         self.tableView.reloadData()
         
         if self.refreshNearbyCoffeeBarsControl.isRefreshing {
