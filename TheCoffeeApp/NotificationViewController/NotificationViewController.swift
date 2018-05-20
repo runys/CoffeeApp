@@ -77,7 +77,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 extension NotificationViewController {
     func registerCoffeeDealNotificationActions() {
-        // 1.
+        // 1. Create the actions
         let likeAction =
             UNNotificationAction(identifier: "likeAction",
                                  title: "Like",
@@ -95,14 +95,14 @@ extension NotificationViewController {
                                           textInputButtonTitle: "Post",
                                           textInputPlaceholder: "Comment")
         
-        // 2.
+        // 2. Create the category associated with the actions
         let dealCategory =
             UNNotificationCategory(identifier: "newCoffeeDealNotification",
                                    actions: [likeAction,dislikeAction, commentAction],
                                    intentIdentifiers: [],
                                    options: [])
         
-        // 3.
+        // 3. Register the category in the Notification Center
         UNUserNotificationCenter.current()
             .setNotificationCategories([dealCategory])
     }
