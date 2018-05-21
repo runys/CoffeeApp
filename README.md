@@ -3,15 +3,15 @@
 App used for the Notification Center workshop in the Apple Developer Academy at Naples.
 
 ## Features
-* List of coffee bars around you
-	* Coffee bar details
+* ✅ List of coffee bars around you
+	* ✅ Coffee bar details
         * You can like or dislike a coffee bar.
-        * List of top 3 coffees in the bar.
-* Tips timeline about coffee (like the App Store )
-    * Simple table view with text and images on a default cell (no navigation here)
-* Special coffee deals page
+        * ✅ List of top 3 coffees in the bar.
+* ✅ Tips timeline about coffee (like the App Store )
+    * ✅ Simple table view with text and images on a default cell (no navigation here)
+* ✅ Special coffee deals page
 	* Deal detail
-* Reminders and coffee history
+* ✅ Reminders and coffee history
 
 ## Notifications
 1. *Local*: Every morning a notification about the nearest coffee shop you like.
@@ -29,8 +29,16 @@ App used for the Notification Center workshop in the Apple Developer Academy at 
 5. *Remote*: A new coffee tip in your coffee tips timeline.
 
 *Content extension*:
-    * To match your app look and feel.
-    * Display the map in the notification.
+* To match your app look and feel.
+* Display the map in the notification.
 
 *Service extension*:
-    * Download media attachments.
+* Download media attachments.
+
+## License
+
+This is an educational app. The purpose of this app is students from the Naples Apple Developer Academy exercise their skills and get used to contribute with open source projects.
+
+They are free to use this app as they wish, experimenting and exploring the technologies available.
+
+You cannot publish this app on the App Store and claim it as your own.
