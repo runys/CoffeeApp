@@ -19,6 +19,7 @@ let latte = Coffee(id: "006", name: "Latte", imageURL: "coffee-latte")
 let macchiato = Coffee(id: "007", name: "Macchiato", imageURL: "coffee-macchiato")
 let mocha = Coffee(id: "008", name: "Mocha", imageURL: "coffee-mocha")
 let caffeNocciola = Coffee(id: "009", name: "Caffe Nocciola", imageURL: "coffee-nocciola")
+let cioccolattaCalda = Coffee(id: "010", name: "Cioccolatta Calda", imageURL: "coffee-cioccolatta-calda")
 
 
 // - MARK:  Coffee Shop

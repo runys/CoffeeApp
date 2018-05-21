@@ -15,7 +15,7 @@ typealias CoffeeReminder = (coffeeID: String, coffeeName: String, hour: Int, min
 
 class APIManager {
     static let shared: APIManager = APIManager()
-    private var coffee: [Coffee] = [espresso, doubleEspresso, ristretto, cappuccino, americano, latte,macchiato, mocha, caffeNocciola]
+    private var coffee: [Coffee] = [espresso, doubleEspresso, ristretto, cappuccino, americano, latte,macchiato, mocha, caffeNocciola, cioccolattaCalda]
     private var tips: [Tip] = [tip1, tip2, tip3]
 
     private var coffeeShops: [CoffeeShop] = [universityBar, barLorenzo, barMexico, barProfessore, caffeGambrinus]

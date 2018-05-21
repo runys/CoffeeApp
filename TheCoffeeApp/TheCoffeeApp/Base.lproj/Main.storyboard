@@ -763,7 +763,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="1092.5037481259371"/>
         </scene>
-        <!--Coffee Reminders-->
+        <!--Daily Reminders-->
         <scene sceneID="dRf-H2-dAf">
             <objects>
                 <tableViewController id="KRZ-3C-Atc" customClass="CoffeeRemindersTableViewController" customModule="TheCoffeeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -820,7 +820,7 @@
                             <outlet property="delegate" destination="KRZ-3C-Atc" id="Q06-hm-3oF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Coffee Reminders" id="hqJ-9o-cq5">
+                    <navigationItem key="navigationItem" title="Daily Reminders" id="hqJ-9o-cq5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gvg-QT-um2">
                             <connections>
                                 <segue destination="o6p-RF-RUT" kind="presentation" modalTransitionStyle="coverVertical" id="5jY-r4-mvN"/>
