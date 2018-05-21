@@ -39,6 +39,7 @@
 		5C5B5F4720AEC05A00EE5138 /* NotificationDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B5F4620AEC05A00EE5138 /* NotificationDatabase.swift */; };
 		7D41D61220A3210400FED6F0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41D61120A3210400FED6F0 /* NotificationService.swift */; };
 		7D41D61620A3210400FED6F0 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D41D60F20A3210400FED6F0 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7D62306120B29D7E00860B51 /* PayloadExample.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D62306020B29D7E00860B51 /* PayloadExample.json */; };
 		7DC23BB920A45D1100D9A6CD /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC23BB820A45D1100D9A6CD /* UserNotifications.framework */; };
 		7DC23BBB20A45D1100D9A6CD /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC23BBA20A45D1100D9A6CD /* UserNotificationsUI.framework */; };
 		7DC23BBE20A45D1100D9A6CD /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC23BBD20A45D1100D9A6CD /* NotificationViewController.swift */; };
@@ -115,6 +116,7 @@
 		7D41D61120A3210400FED6F0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7D41D61320A3210400FED6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D46C041209C7183001959EA /* TheCoffeeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheCoffeeApp.entitlements; sourceTree = "<group>"; };
+		7D62306020B29D7E00860B51 /* PayloadExample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PayloadExample.json; sourceTree = "<group>"; };
 		7DC23BB620A45D1100D9A6CD /* NotificationViewController.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationViewController.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC23BB820A45D1100D9A6CD /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7DC23BBA20A45D1100D9A6CD /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
@@ -285,6 +287,7 @@
 		7D41D61020A3210400FED6F0 /* NotificationService */ = {
 			isa = PBXGroup;
 			children = (
+				7D62306020B29D7E00860B51 /* PayloadExample.json */,
 				7D41D61120A3210400FED6F0 /* NotificationService.swift */,
 				7D41D61320A3210400FED6F0 /* Info.plist */,
 			);
@@ -437,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D62306120B29D7E00860B51 /* PayloadExample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

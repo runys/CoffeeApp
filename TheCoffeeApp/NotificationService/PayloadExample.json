@@ -1,0 +1,11 @@
+{ 
+    "aps": {
+    "alert":{
+    "title": "New deal",
+    "body": "Don't miss it!"
+            },
+    "badge":1,
+    "sound":"default",
+    "category": "aCategory"
+    }
+}
