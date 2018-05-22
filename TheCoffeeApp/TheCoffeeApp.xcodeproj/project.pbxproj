@@ -670,7 +670,7 @@
 				INFOPLIST_FILE = TheCoffeeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeAppEduardo;
+				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,7 +688,7 @@
 				INFOPLIST_FILE = TheCoffeeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeAppEduardo;
+				PRODUCT_BUNDLE_IDENTIFIER = it.iosda2018.TheCoffeeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
