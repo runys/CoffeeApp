@@ -9,13 +9,9 @@
 import UIKit
 
 struct ColorPallete {
-    static let darkPrimary: UIColor = color(r: 164, g: 108, b: 47)
-    static let lightPrimary: UIColor = color(r: 230, g: 199, b: 148)
-    static let lightBackground: UIColor = color(r: 211, g: 223, b: 227)
-    static let mediumBackground: UIColor = color(r: 60, g: 86, b: 90)
-    static let darkBackground: UIColor = color(r: 43, g: 8, b: 2)
-    
-    private static func color(r: CGFloat, g: CGFloat, b: CGFloat) -> UIColor {
-        return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1)
-    }
+    static let darkPrimary = #colorLiteral(red: 0.6431372549, green: 0.4235294118, blue: 0.1843137255, alpha: 1)
+    static let lightPrimary = #colorLiteral(red: 0.9019607843, green: 0.7803921569, blue: 0.5803921569, alpha: 1)
+    static let lightBackground = #colorLiteral(red: 0.8274509804, green: 0.8745098039, blue: 0.8901960784, alpha: 1)
+    static let mediumBackground = #colorLiteral(red: 0.2352941176, green: 0.337254902, blue: 0.3529411765, alpha: 1)
+    static let darkBackground = #colorLiteral(red: 0.168627451, green: 0.03137254902, blue: 0.007843137255, alpha: 1)
 }
