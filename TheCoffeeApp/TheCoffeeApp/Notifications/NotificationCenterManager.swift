@@ -10,7 +10,7 @@ import Foundation
 import UserNotifications
 import CoreLocation
 
-// - MARK: Setting up the
+// - MARK: Notification Center Manager
 class NotificationCenterManager: NSObject, UNUserNotificationCenterDelegate {
     
     // Singleton
@@ -202,7 +202,7 @@ extension NotificationCenterManager {
         content.threadIdentifier = notificationContent.threadIdentifier
         
         // Default properties
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         content.badge = 1
         
         // 2. Get the trigger
@@ -230,7 +230,7 @@ extension NotificationCenterManager {
         content.threadIdentifier = notificationContent.threadIdentifier
         
         // Default properties
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         content.badge = 1
         
         // 2. Get the trigger

@@ -16,10 +16,13 @@ typealias CoffeeReminder = (coffeeID: String, coffeeName: String, hour: Int, min
 class APIManager {
     static let shared: APIManager = APIManager()
     private var coffee: [Coffee] = [espresso, doubleEspresso, ristretto, cappuccino, americano, latte,macchiato, mocha, caffeNocciola, cioccolattaCalda]
+    
     private var tips: [Tip] = [tip1, tip2, tip3]
-
+    
     private var coffeeShops: [CoffeeShop] = [universityBar, barLorenzo, barMexico, barProfessore, caffeGambrinus]
+    
     private var deals: [Deal] = [deal1, deal2, deal3, deal4]
+    
     private var drinkHistory: [DrinkRecord] = [record1, record2, record3, record4]
     
     // - MARK: GETs APIs
@@ -70,13 +73,13 @@ class APIManager {
         return drinkHistory
     }
     
-     func getAllReminders(completionHandler: @escaping ([CoffeeReminder]) -> Void) {
+    func getAllReminders(completionHandler: @escaping ([CoffeeReminder]) -> Void) {
         
         // 1. Get all the notifications
         //  The completion handler is how you give the information back
         //  because the .getAllNotifications method is asyncronous.
         NotificationCenterManager.shared.getAllNotifications { (notificationRequests) in
-        
+            
             // 2. An array with a custom type CoffeeReminder
             var coffeeReminders: [CoffeeReminder] = []
             
@@ -86,7 +89,7 @@ class APIManager {
                 let coffeeID = notification.content.userInfo["coffeeID"] as? String ?? ""
                 
                 let trigger = notification.trigger as! UNCalendarNotificationTrigger
-            
+                
                 // 4. Creates a CoffeeReminder object
                 let coffeReminder: CoffeeReminder = (coffeeID: coffeeID,
                                                      coffeeName: coffeeName,
@@ -112,7 +115,6 @@ class APIManager {
             add(tip)
             NotificationCenter.default.post(name: Notification.Name(rawValue: "refreshTips"), object: self)
             return tip
-            
         }
         return nil
     }
@@ -124,7 +126,6 @@ class APIManager {
     func add(_ deal: Deal) {
         deals.append(deal)
     }
-    
     
     func addDrinkEntry(coffeeId: String, timestamp: Date, coffeeBar: CoffeeShop?) {
         let coffee = APIManager.shared.getCoffee(coffeeId)!
@@ -170,9 +171,9 @@ class APIManager {
         
         NotificationCenterManager.shared.removeNotification(with: notificationIdentifier)
     }
-
+    
     // - MARK: Notification APIs
-
+    
     func setUpLocationNotifications() {
         for coffeeBar in coffeeShops {
             registerProximityNotification(for: coffeeBar)

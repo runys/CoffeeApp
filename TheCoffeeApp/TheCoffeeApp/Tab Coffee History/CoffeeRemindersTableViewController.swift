@@ -66,7 +66,7 @@ class CoffeeRemindersTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if self.reminders.count > 0 {
             if editingStyle == .delete {
                 // Delete the row from the data source

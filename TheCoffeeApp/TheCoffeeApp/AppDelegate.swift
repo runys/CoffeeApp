@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application.applicationIconBadgeNumber = 0
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Setting up the class that will handle all the notifications
         let notificationCenter = UNUserNotificationCenter.current()

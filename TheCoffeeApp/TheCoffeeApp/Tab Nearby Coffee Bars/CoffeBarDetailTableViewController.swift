@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class CoffeBarDetailTableViewController: UITableViewController {
-    private let mapSpan: MKCoordinateSpan = MKCoordinateSpanMake(0.005, 0.005)
+    private let mapSpan: MKCoordinateSpan = MKCoordinateSpan.init(latitudeDelta: 0.005, longitudeDelta: 0.005)
     private let cornerRadius: CGFloat = 5.0
     
     var coffeeBar: CoffeeShop?

@@ -69,7 +69,7 @@ class DrinkingHistoryTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if self.history.count > 0 {
             if editingStyle == .delete {
                 self.history.remove(at: indexPath.row)
